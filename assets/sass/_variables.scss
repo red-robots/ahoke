@@ -1,93 +1,52 @@
-$color_link: #3a80bc;
-$color_link_visited: purple;
-$color_link_hover: midnightblue;
-$color_text_main: #404040;
-$primary: #191919;
-$secondary: #BA0C2F;
-$gray: #F2F2F2;
-$gray_dark: #707070;
-$slight-gray: #F4F4F4;
-$gray_border: #b5b5b5;
-$dark: #191919;
-$red: #BA0D30;
-$blue:#1A72BE;
-$limegreen:#71C943;
-$submenu_color: #191919;
-$teal: #6FA2B6;
+$brown: #84735E;
+$dark_brown: #392C1D;
+$green: #91A796;
+$white: #FFFFFF;
+$light_brown: #EDE9E3;
+$border_cream: #DBD0BD;
+$pink: #D4B2A7;
 
-//$font_primary: 'Libre Franklin', sans-serif;
-//$font_secondary: 'Poppins', sans-serif;
-//$font_primary: 'Brandon', sans-serif;
+$primary: $dark_brown;
+$submenu_color: $brown;
+$color_link: $green;
+$color_link_hover: $dark_brown;
+$color_link_active: $green;
+
+/*** Fonts ***/
 @font-face {
-  font-family: 'Brandon Light';
-  src: url('fonts/brandon/Brandon_Grotesque_light.woff') format('woff');
+  font-family: 'Raleway';
+  src: url('fonts/Raleway-Regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Brandon Light Italic';
-  src: url('fonts/brandon/Brandon_Grotesque_light_italic.woff') format('woff');
+  font-family: 'Raleway Semibold';
+  src: url('fonts/Raleway-SemiBold.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Brandon';
-  src: url('fonts/brandon/Brandon_Grotesque_regular.woff') format('woff');
+  font-family: 'PlayfairDisplay Regular';
+  src: url('fonts/PlayfairDisplay-Regular.ttf') format('ttf');
   font-weight: normal;
   font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Italic';
-  src: url('fonts/brandon/Brandon_Grotesque_regular_italic.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Medium';
-  src: url('fonts/brandon/Brandon_Grotesque_medium.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Medium Italic';
-  src: url('fonts/brandon/Brandon_Grotesque_medium_italic.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Bold';
-  src: url('fonts/brandon/Brandon_Grotesque_bold.woff') format('woff');
-  // font-weight: normal;
-  // font-style: normal;
-}
-@font-face {
-  font-family: 'Brandon Black';
-  src: url('fonts/brandon/Brandon_Grotesque_black.woff') format('woff');
-  // font-weight: normal;
-  // font-style: normal;
 }
 
-$font-brandon-light: 'Brandon Light';
-$font-brandon-light-italic: 'Brandon Light Italic';
-$font-brandon-regular: 'Brandon';
-$font-brandon-regular-italic: 'Brandon Italic';
-$font-brandon-medium: 'Brandon Medium';
-$font-brandon-medium-italic: 'Brandon Medium Italic';
-$font-brandon-bold: 'Brandon Bold';
-$font-brandon-black: 'Brandon Black';
+$font-raleway-regular: 'Raleway';
+$font-raleway-semibold: 'Raleway Semibold';
+$font-playfair-regular: 'PlayfairDisplay Regular';
 
-$font_primary: $font-brandon-regular;
-$font_secondary: 'Lato', sans-serif;
-$font_third: 'Montserrat', sans-serif;
-$font_code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-$font_pre: "Courier 10 Pitch", Courier, monospace;
+$font_primary: $font-raleway-regular;
+$font_secondary: $font-playfair-regular;
 
+/*** Sizes ***/
 $portrait:480px;
 $xswidth: 600px;
 $tabwidth: 820px;
 $midwidth: 960px;
 $deskwidth: 1200px;
-$xxl: 1300px;
+$xxl: 1364px;
+$xxxl: 1640px;
 // $nav_width: 350px;
 $nav_width: 485px;
 
@@ -97,6 +56,7 @@ $nav_width: 485px;
 @mixin mid { @media (min-width: $midwidth) { @content; } }
 @mixin desk {  @media (min-width: $deskwidth) { @content; } }
 @mixin xxl {  @media (min-width: $xxl) { @content; } }
+@mixin xxxl {  @media (min-width: $xxl) { @content; } }
 @mixin max($width) {
 	@media screen and (max-width: $width) { @content; }
 }
@@ -132,44 +92,44 @@ $nav_width: 485px;
 	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: flex;
-  }
-  @mixin flexbox-flex($first, $second, $third) {
+}
+@mixin flexbox-flex($first, $second, $third) {
 	-webkit-box-flex: $first $second $third;
 	-moz-box-flex: $first $second $third;
 	-webkit-flex: $first $second $third;
 	-ms-flex: $first $second $third;
 	flex: $first $second $third;
-  }
-  @mixin flexbox-wrap($value){
+}
+@mixin flexbox-wrap($value){
 	-webkit-flex-wrap: $value;
 	flex-wrap: $value;
-  }
-  @mixin flexbox-align-content($value){
+}
+@mixin flexbox-align-content($value){
 	-webkit-align-content: $value;
 	align-content: $value;
-  }
-  @mixin flexbox-align-items($value){
+}
+@mixin flexbox-align-items($value){
 	-webkit-align-items: $value;
 	align-items: $value;
-  }
-  @mixin flexbox-justify($value){
+}
+@mixin flexbox-justify($value){
 	-webkit-justify-content: $value;
 	justify-content: $value;
-  }
-  @mixin flexbox-align-self($value){
+}
+@mixin flexbox-align-self($value){
 	-webkit-align-self: $value;
 	align-self: $value;
-  }
-  @mixin flexbox-direction($value){
+}
+@mixin flexbox-direction($value){
 	-webkit-flex-direction: $value;
 	flex-direction: $value;
-  }
-  @mixin translatexy($value1,$value2){
+}
+@mixin translatexy($value1,$value2){
 	-ms-transform: translateX($value1) translateY($value2);
 	-moz-transform: translateX($value1) translateY($value2);
 	-webkit-transform: translateX($value1) translateY($value2);
 	transform: translateX($value1) translateY($value2);
-  }
+}
 
 @mixin flexgroup() {
 	@include flexbox();

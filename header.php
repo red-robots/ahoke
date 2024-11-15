@@ -40,35 +40,31 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
 <body <?php body_class(); ?>>
 
 <div id="page" class="site cf">
-	<a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a>
+	<!-- <a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a> -->
 
-	<header id="masthead" class="site-header start-position" role="banner">
-    <div class="wrapper">
-      <div class="header-inner">
-        <?php if ( has_custom_logo() ) { ?>
-          <span class="site-logo"><?php the_custom_logo(); ?></span>
-        <?php } ?>
+	<header id="masthead" class="site-header" role="banner">
+    <div class="wrapper flexwrap">
+        <div id="site-logo">
+          <?php if( get_custom_logo() ) { ?>
+            <?php the_custom_logo(); ?>
+          <?php } else { ?>
+            <h1 class="logo"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+          <?php } ?>
+  			</div>
 
-        <button id="menu-toggle" class="menu-toggle" aria-label="Menu Toggle"><span class="sr">Menu</span><span class="bar"></span></button>
-
-        <?php if ( has_nav_menu( 'primary' ) ) { ?>
-  		  <nav id="site-navigation" class="main-navigation" role="navigation">
-          <?php
-            wp_nav_menu(
-              array(
-                'theme_location'  => 'primary',
-                'menu_class'      => 'menu-wrapper',
-                'container_class' => 'primary-menu-container',
-                'items_wrap'      => '<ul id="primary-menu-list" class="%2$s">%3$s</ul>',
-                'fallback_cb'     => false,
-              )
-            );
-          ?>
-        </nav>
+        <?php if ( has_nav_menu( 'primary' ) ){ ?>
+          <div id="site-navigation">
+            <nav id="navigation" class="main-navigation animated fadeIn" role="navigation">
+              <?php wp_nav_menu( array( 'theme_location' => 'primary', 'container'=>false, 'menu_id' => 'primary-menu','link_before'=>'<span>','link_after'=>'</span>') ); ?>
+            </nav>
+            <span id="closeMobileNav"></span>
+          </div>
         <?php } ?>
         
-  		</div>
+        <span class="mobile-menu" id="mobile-menu-toggle"><span class="bar"></span><i>Menu</i></span>
     </div>
 	</header><!-- #masthead -->
+
+  <?php get_template_part('parts/banner'); ?>
 
 	<div id="content" class="site-content">

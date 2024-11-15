@@ -15,14 +15,10 @@
  */
 define('THEMEURI',get_template_directory_uri() . '/');
 
-
-
 function add_author_support_to_posts() {
    add_post_type_support( 'activity_schedule', 'author' ); 
 }
 add_action( 'init', 'add_author_support_to_posts' );
-
-
 
 // Add custom column for sticky post
 function add_sticky_post_column($columns) {
@@ -39,8 +35,6 @@ function sticky_post_column_content($column, $post_id) {
     }
 }
 add_action('bw_sticky_posts_columns', 'sticky_post_column_content', 10, 2);
-
-
 
 // Add featured image to REST API
 add_action('rest_api_init', 'register_rest_images' );
@@ -482,50 +476,6 @@ jQuery(document).ready(function($){
         $(this).find('.acf-input').appendTo( )
         parent.find('[data-name="child_menu_pagelink_target"] .acf-input').appendTo( parent.find('[data-name="child_menu_pagelink"] .acf-input-wrap') );
     });
-
-    /* ACF Flexible Content For River Jam Bands */
-    if( $('[data-layout="schedule"]').length > 0 ) {
-        $('[data-layout="schedule"]').each(function(){
-            var str = $(this).find('[data-name="day"] .acf-input select').val();
-            var title = ( str.replace(/\s+/g,'').trim() ) ? str.replace(/\s+/g,' ').trim() : '(Blank)';
-            $(this).find(".acf-fc-layout-handle").attr("data-title",title);
-        });
-    }
-
-    // River Jam Options - Rename Link
-    if( $("#adminmenu li#menu-posts-music").length>0 ) {
-        $("#adminmenu li#menu-posts-music .wp-submenu a").each(function(){
-            var txt = $(this).text();
-            if(txt=='River Jam Options') {
-                $(this).text('Generic Options');
-            }
-            if(txt=='River Jam Programming') {
-                var tabURL = '<?php echo admin_url('edit.php?post_type=jam-programs') ?>';
-                $(this).attr('href',tabURL);
-                $(this).text('Programming');
-                <?php if( isset($_GET['post_type']) && $_GET['post_type']=='jam-programs') { ?>
-                $(this).parent().addClass('current');
-                $(this).addClass('current');
-                <?php } ?>
-            }
-        });
-
-        <?php if( isset($_GET['post_type']) && $_GET['post_type']=='jam-programs') { ?>
-            $("#adminmenu li#menu-posts-music").removeClass("menu-top").addClass("wp-has-submenu wp-has-current-submenu wp-menu-open menu-top menu-icon-music");
-            $("#adminmenu li#menu-posts-music a.wp-has-submenu").addClass('wp-has-current-submenu wp-menu-open');
-        <?php } ?>
-    }
-
-
-
-    /* ACF Flexible Content For River Jam Schedules */
-    if( $('[data-name="other_activities"]').length > 0 ) {
-        $('[data-layout="other_activity"]').each(function(){
-            var str = $(this).find('[data-name="title"] .acf-input-wrap input').val();
-            var title = ( str.replace(/\s+/g,'').trim() ) ? str.replace(/\s+/g,' ').trim() : '(Blank)';
-            $(this).find(".acf-fc-layout-handle").attr("data-title",title);
-        });
-    }
 
     /* ACF Flexible Content For Educational Adventure */
     if( $('[data-name="prog_repeater_blocks"]').length > 0 ) {
@@ -983,53 +933,24 @@ function displayCustomIcons() {
 }
 
 /* ACF CUSTOM OPTIONS TABS */
-if( function_exists('acf_add_options_page') ) {
-    acf_add_options_page();
-}
-function be_acf_options_page() {
-    if ( ! function_exists( 'acf_add_options_page' ) ) return;
+// if( function_exists('acf_add_options_page') ) {
+//     acf_add_options_page();
+// }
+// function be_acf_options_page() {
+//     if ( ! function_exists( 'acf_add_options_page' ) ) return;
     
-    $acf_option_tabs = array(
-        array( 
-            'title'      => 'Today Options',
-            'capability' => 'manage_options',
-        ),
-        array( 
-            'title'      => 'Menu Options',
-            'capability' => 'manage_options',
-        ),
-        array( 
-            'title'      => 'Global Options',
-            'capability' => 'manage_options',
-        )
-    );
+//     $acf_option_tabs = array(
+//         array( 
+//             'title'      => 'Global Options',
+//             'capability' => 'manage_options',
+//         )
+//     );
 
-    foreach($acf_option_tabs as $options) {
-        acf_add_options_page($options);
-    }
-}
-add_action( 'acf/init', 'be_acf_options_page' );
-
-/* Options page under Story custom post type */
-if( function_exists('acf_add_options_page') ) {
-    acf_add_options_sub_page(array(
-        'page_title'     => 'Other Activities',
-        'menu_title'    => 'Other Activities',
-        'parent_slug'    => 'edit.php?post_type=activity'
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title'    => 'River Jam Programming',
-        'menu_title'    => 'River Jam Programming',
-        'parent_slug'   => 'edit.php?post_type=music'
-    ));
-
-    acf_add_options_sub_page(array(
-        'page_title'    => 'River Jam Options',
-        'menu_title'    => 'River Jam Options',
-        'parent_slug'   => 'edit.php?post_type=music'
-    ));
-}
+//     foreach($acf_option_tabs as $options) {
+//         acf_add_options_page($options);
+//     }
+// }
+// add_action( 'acf/init', 'be_acf_options_page' );
 
 function get_vimeo_data($vimeoId) {
     if (empty($vimeoId)) return '';
@@ -2560,7 +2481,6 @@ function getDataBySlug($slug) {
 // remove_filter( 'the_content', 'wpautop' );
 // remove_filter( 'the_excerpt', 'wpautop');
 
-
 // add new buttons
 add_filter( 'mce_buttons', 'myplugin_register_buttons' );
 
@@ -2578,8 +2498,6 @@ function myplugin_register_tinymce_javascript( $plugin_array ) {
   $plugin_array['BUTTON2'] = $plugin_js_url;
   return $plugin_array;
 }
-
-
 
 add_action('wp_ajax_nopriv_film_series_details_popup', 'film_series_details_popup');
 add_action('wp_ajax_film_series_details_popup', 'film_series_details_popup');
@@ -2607,7 +2525,6 @@ function film_series_details_popup(){
   die();
 }
 
-
 function shortenDayName($day) {
   $d['Monday'] = 'Mon';
   $d['Tuesday'] = 'Tue';
@@ -2619,4 +2536,5 @@ function shortenDayName($day) {
   return ( isset($d[$day]) ) ? $d[$day] : '';
 }
 
-
+/*** Add image sizes ***/
+add_image_size( 'banner-image', 880, 550);

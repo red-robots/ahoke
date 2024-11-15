@@ -53,11 +53,11 @@ function bellaworks_scripts() {
 	// 	);
 
 	wp_enqueue_script( 
-			'bellaworks-blocks', 
-			get_template_directory_uri() . '/assets/js/vendors.min.js', 
-			array(), '20200713', 
-			true 
-		);
+		'bellaworks-blocks', 
+		get_template_directory_uri() . '/assets/js/vendors.min.js', 
+		array(), '20200713', 
+		true 
+	);
 
 	wp_enqueue_script( 
 			'colorbox', 
@@ -108,11 +108,12 @@ function bellaworks_scripts() {
   );
 
   wp_enqueue_script( 
-    'bellaworks-custom', 
-    get_template_directory_uri() . '/assets/js/custom.js', 
-    array(), '2.37', 
-    true 
+	'bellaworks-custom', 
+	get_template_directory_uri() . '/assets/js/custom.min.js?v=1.1', 
+	array(), '20241031', 
+	true 
   );
+
   wp_enqueue_script( 
     'cusom-calendar', 
     get_template_directory_uri() . '/assets/js/calendar.js', 
@@ -131,8 +132,6 @@ function bellaworks_scripts() {
 		array(), '20180424', 
 		true 
 	);
-
-
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
