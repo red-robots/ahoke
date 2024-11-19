@@ -40,7 +40,7 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
 <body <?php body_class(); ?>>
 
 <div id="page" class="site cf">
-	<!-- <a class="skip-link sr" href="#content"><?php esc_html_e( 'Skip to content', 'bellaworks' ); ?></a> -->
+	<!-- <a class="skip-link sr" href="#content"><?php //esc_html_e( 'Skip to content', 'bellaworks' ); ?></a> -->
 
 	<header id="masthead" class="site-header" role="banner">
     <div class="wrapper flexwrap">
