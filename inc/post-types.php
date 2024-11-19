@@ -17,6 +17,15 @@ function js_custom_init() {
           'menu_position' => 10,
           'supports'  => array('title','editor', 'author')
         ),
+        array(
+            'post_type' => 'vendor',
+            'menu_name' => 'Vendor',
+            'plural'    => 'Vendors',
+            'single'    => 'Vendor',
+            'menu_icon' => 'dashicons-buddicons-buddypress-logo',
+            'menu_position' => 10,
+            'supports'  => array('title','editor', 'author')
+          ),
     );
     
     if($post_types) {
@@ -83,15 +92,15 @@ add_action( 'init', 'build_taxonomies', 0 );
 function build_taxonomies() {
 
   $post_types = array(
-    // array(
-    //   'post_type' => array('whats-new'),
-    //   'menu_name' => 'Whats New Category',
-    //   'plural'    => 'Whats New Category',
-    //   'single'    => 'Whats New Category',
-    //   'taxonomy'  => 'whats-new-category',
-    //   'query_var' => false,
-    //   'show_admin_column'=>1
-    // )
+    array(
+      'post_type' => array('vendor'),
+      'menu_name' => 'Vendor Category',
+      'plural'    => 'Vendor Categories',
+      'single'    => 'Vendor Category',
+      'taxonomy'  => 'vendor-category',
+      'query_var' => false,
+      'show_admin_column'=>1
+    )
   );
 
   if($post_types) {

@@ -505,7 +505,7 @@ footer {
       padding: 5px 10px;
     }
 
-    .address {
+    .address, .phone {
       margin-bottom: 22px;
     }
 
@@ -570,6 +570,16 @@ footer {
 .padding-tb-70 {
   padding-top: 70px;
   padding-bottom: 70px;
+}
+
+.padding-tb-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  @include max($tabwidth) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
 }
 
 .padding-tb-150 {
@@ -1336,6 +1346,7 @@ footer {
 .our-story {
   background-color: $green;
   color: $white;
+  overflow: hidden;
   position: relative;
   z-index: 1;
 
@@ -1400,6 +1411,32 @@ footer {
     font-size: 20px;
     line-height: 30px;
   }
+
+  &:before {
+    background-color: $pink;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 0;
+    width: 705px;
+
+    @include desk { height: 82px; }
+  }
+
+  &:after {
+    background-image: url('images/three-rings.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    right: -150px;
+    z-index: 2;
+    height: 381px;
+    width: 374px;
+  }
 }
 
 .diff-exp {
@@ -1462,4 +1499,109 @@ footer {
       line-height: 30px;
     }
   }
+}
+
+/*** Contact page ***/
+.contact-page {
+  .wrapper {
+    max-width: $tabwidth;
+  }
+
+  .contact {
+    &-banner {
+      background-color: $light_brown;
+      text-align: center;
+      position: relative;
+      width: 100%;
+      z-index: 2;
+
+      &:before {
+        background-image: url('images/banner-bottom.png');
+        content: '';
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        z-index: 1;
+        height: 24px;
+        width: 100%;
+      }
+    }
+    &-title {
+      color: $brown;
+      font-size: 3.1rem;
+    }
+    &-hours {
+      color: $brown;
+      font-size: 1.25rem;
+      line-height: 1.9rem;
+      margin-top: 35px;
+      margin-bottom: 40px;
+    }
+
+    &-content {
+      padding-top: 100px;
+      padding-bottom: 150px;
+    }
+
+    &-social {
+      width: 100%;
+
+      @include tab { width: 25%; }
+  
+      a {
+        background-color: $brown;
+        border-radius: 30px;
+        color: $white;
+        display: inline-block;
+        font-size: 18px;
+        line-height: 1.7em;
+        margin-left: 15px;
+        margin-bottom: 30px;
+        width: 32px;
+        height: 32px;
+        text-align: center;
+  
+        &:hover {
+          opacity: 0.8;
+        }
+  
+        .fa {
+          fill: $light_brown;
+        }
+      }
+  
+      @include max($tabwidth) {
+        margin-top: 30px;
+        width: 30%;
+      }
+  
+      @include max($xswidth) {
+        padding: 0;
+        width: 100%;
+        text-align: left;
+  
+        a {
+          margin-left: 0;
+          margin-right: 15px;
+        }
+      }
+
+      &-header {
+        border-bottom: 3px solid $border_cream;
+        font-size: 1.9rem;
+        font-family: $font-playfair-regular;
+        padding-bottom: 15px;
+      }
+    }
+  }
+
+  .notice {
+    background-color: $white;
+    border-radius: 25px;
+    color: $brown;
+    font-family: $font-raleway-semibold;
+    font-style: italic;
+    padding: 15px 40px;
+  }
+
 }

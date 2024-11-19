@@ -1382,13 +1382,14 @@ footer .footer-logo a,footer .footer-logo img{max-width:228px;display:block;heig
 footer .footer-inner{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 footer .showroom{color:#392c1d;padding-right:80px;width:25%}
 footer .showroom .title{border:1px solid #84735e;color:#84735e;display:inline-block;margin-bottom:22px;padding:5px 10px}
-footer .showroom .address{margin-bottom:22px}
+footer .showroom .address,footer .showroom .phone{margin-bottom:22px}
 footer .showroom .hours{font-weight:bold}
 footer .social-media{text-align:right;width:25%}
 footer .social-media a{background-color:#84735e;border-radius:30px;color:#fff;display:inline-block;font-size:18px;line-height:1.7em;margin-left:15px;width:32px;height:32px;text-align:center}
 footer .social-media a:hover{opacity:.8}
 footer .social-media a .fa{fill:#ede9e3}
 .padding-tb-70{padding-top:70px;padding-bottom:70px}
+.padding-tb-100{padding-top:100px;padding-bottom:100px}
 .padding-tb-150{padding-top:150px;padding-bottom:150px}
 .padding-tb-200{padding-top:200px;padding-bottom:200px}
 .homepage-content .title{color:#84735e;font-family:"PlayfairDisplay Regular";margin-bottom:30px}
@@ -1447,7 +1448,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .about-banner-image:after{background-image:url("images/banner-about-frame.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;top:-15px;left:15px;z-index:2;height:100%;max-width:580px;width:100%}
 .about-banner-image:before{background-image:url("images/banner-green-ball.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;top:12%;right:-4%;z-index:2;height:150px;width:150px}
 .about-banner-image img{border-radius:400px 400px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
-.our-story{background-color:#91a796;color:#fff;position:relative;z-index:1}
+.our-story{background-color:#91a796;color:#fff;overflow:hidden;position:relative;z-index:1}
 .our-story-img{position:relative;z-index:2;height:450px;width:100%;overflow:hidden}
 .our-story-img img{border-radius:400px 400px 0 0;height:100%;position:relative;-o-object-fit:cover;object-fit:cover;z-index:3;top:19px}
 .our-story-img:after{background-color:#d4b2a7;content:"";position:absolute;top:0;left:0;z-index:1;height:100%;max-width:580px;width:100%}
@@ -1455,6 +1456,8 @@ footer .social-media a .fa{fill:#ede9e3}
 .our-story-content{width:100%}
 .our-story-title{margin-bottom:40px}
 .our-story-description{font-size:20px;line-height:30px}
+.our-story:before{background-color:#d4b2a7;content:"";position:absolute;top:0;right:0;z-index:2;height:0;width:705px}
+.our-story:after{background-image:url("images/three-rings.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;bottom:-50px;right:-150px;z-index:2;height:381px;width:374px}
 .diff-exp{background-color:#fff;text-align:center}
 .diff-exp-title{color:#84735e;margin-bottom:90px}
 .diff-exp-wrapper-xl{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;padding-left:15px;padding-right:15px}
@@ -1463,6 +1466,18 @@ footer .social-media a .fa{fill:#ede9e3}
 .diff-exp .exp-item .exp-feat-img img{-o-object-fit:cover;object-fit:cover;height:100%}
 .diff-exp .exp-item .exp-title{color:#84735e;font-size:25px;margin-top:30px;margin-bottom:20px}
 .diff-exp .exp-item .exp-content{font-size:20px;line-height:30px}
+.contact-page .wrapper{max-width:820px}
+.contact-page .contact-banner{background-color:#ede9e3;text-align:center;position:relative;width:100%;z-index:2}
+.contact-page .contact-banner:before{background-image:url("images/banner-bottom.png");content:"";position:absolute;bottom:-24px;left:0;z-index:1;height:24px;width:100%}
+.contact-page .contact-title{color:#84735e;font-size:3.1rem}
+.contact-page .contact-hours{color:#84735e;font-size:1.25rem;line-height:1.9rem;margin-top:35px;margin-bottom:40px}
+.contact-page .contact-content{padding-top:100px;padding-bottom:150px}
+.contact-page .contact-social{width:100%}
+.contact-page .contact-social a{background-color:#84735e;border-radius:30px;color:#fff;display:inline-block;font-size:18px;line-height:1.7em;margin-left:15px;margin-bottom:30px;width:32px;height:32px;text-align:center}
+.contact-page .contact-social a:hover{opacity:.8}
+.contact-page .contact-social a .fa{fill:#ede9e3}
+.contact-page .contact-social-header{border-bottom:3px solid #dbd0bd;font-size:1.9rem;font-family:"PlayfairDisplay Regular";padding-bottom:15px}
+.contact-page .notice{background-color:#fff;border-radius:25px;color:#84735e;font-family:"Raleway Semibold";font-style:italic;padding:15px 40px}
 @media(min-width:600px){.brands .brand-item{width:49%}
 .diff-exp .exp-item{margin-bottom:30px;width:49%}
 }@media(min-width:820px){h1{font-size:3.3rem}
@@ -1472,6 +1487,7 @@ h4{font-size:1.8rem}
 h5{font-size:1.5rem}
 h6{font-size:1.2rem}
 .site-header{position:relative;top:0;left:0;width:100%;z-index:1}
+.contact-page .contact-social{width:25%}
 }@media(min-width:960px){.brands .brand-item{width:32%}
 .our-story-img{position:absolute;bottom:0;left:0;z-index:2;height:100%;max-width:705px;width:40%}
 .our-story-content{margin-left:45%;width:55%}
@@ -1479,6 +1495,7 @@ h6{font-size:1.2rem}
 }@media(min-width:1200px){#site-logo{width:370px}
 .site-header .wrapper{padding:40px 50px}
 .brands .brand-item{width:24%}
+.our-story:before{height:82px}
 .diff-exp .exp-item{width:24%}
 }@media(min-width:1364px){.brands .brand-item{width:19.5%}
 .diff-exp .exp-item{margin-bottom:0;width:19.5%}
@@ -1539,6 +1556,7 @@ h6{font-size:1.2rem}
 }@media screen and (max-width:820px){footer .footer-logo{width:100%}
 footer .showroom{margin-top:30px;width:35%}
 footer .social-media{margin-top:30px;width:30%}
+.padding-tb-100{padding-top:70px;padding-bottom:70px}
 .padding-tb-150{padding-top:70px;padding-bottom:70px}
 .padding-tb-200{padding-top:80px;padding-bottom:80px}
 .banner{height:auto;padding-top:150px}
@@ -1562,6 +1580,7 @@ footer .social-media{margin-top:30px;width:30%}
 .about-banner-image:after{top:-12px;left:12px}
 .about-banner-image-wrap{height:450px;width:290px}
 .about-banner-image-wrap:after{top:-29px;left:-70%}
+.contact-page .contact-social{margin-top:30px;width:30%}
 }@media screen and (max-width:819px){.site-header{z-index:9999999}
 .mobile-navigation.active{background-color:rgba(0,0,0,.85)}
 }@media screen and (max-width:600px){footer .showroom{padding:0;width:100%}
@@ -1586,6 +1605,8 @@ footer .social-media a{margin-left:0;margin-right:15px}
 .about-banner-image:after{top:-12px;left:12px}
 .about-banner-image-wrap{padding-right:0;height:450px;width:380px}
 .about-banner-image-wrap:after{top:-25px;left:-68%}
+.contact-page .contact-social{padding:0;width:100%;text-align:left}
+.contact-page .contact-social a{margin-left:0;margin-right:15px}
 }@media screen and (max-width:480px){#site-navigation{max-width:100%}
 }@media(print),(prefers-reduced-motion:reduce){.animated{-webkit-animation-duration:1ms !important;animation-duration:1ms !important;-webkit-transition-duration:1ms !important;transition-duration:1ms !important;-webkit-animation-iteration-count:1 !important;animation-iteration-count:1 !important}
 }@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}

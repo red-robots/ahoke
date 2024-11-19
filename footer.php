@@ -20,10 +20,12 @@
 
               $title = $row["showroom_title"];
               $address = $row["address"];
+              $phone = $row["phone"];
               $hours = $row["hours"];
 
               echo "<div class='title'>". $title ."</div>";
               echo "<div class='address'>". $address ."</div>";
+              echo "<div class='phone'>". $phone ."</div>";
               echo "<div class='hours'>Hours:</div>";
               echo "<div>". $hours ."</div>";
 
@@ -39,15 +41,15 @@
             echo "<div class='social-media'>";
 
             if( $facebook ){
-              echo "<a href='". $facebook ."' class='facebook' target='_blank'><i class='fa-brands fa-facebook-f'></i></i></a>";
+              echo "<a href='". $facebook ."' class='facebook' target='_blank'><i class='fa-brands fa-facebook-f'></i></a>";
             }
 
             if( $instagram ){
-              echo "<a href='". $instagram ."' class='instagram' target='_blank'><i class='fa-brands fa-instagram'></i></i></a>";
+              echo "<a href='". $instagram ."' class='instagram' target='_blank'><i class='fa-brands fa-instagram'></i></a>";
             }
 
             if( $pinterest ){
-              echo "<a href='". $pinterest ."' target='_blank'><i class='fa-brands fa-pinterest-p'></i></i></a>";
+              echo "<a href='". $pinterest ."' target='_blank'><i class='fa-brands fa-pinterest-p'></i></a>";
             }
 
             echo '</div>';
