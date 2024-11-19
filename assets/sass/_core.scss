@@ -883,7 +883,6 @@ footer {
       }
     }
   }
-
 }
 
 /*** Home - Content 1 ***/
@@ -1120,24 +1119,277 @@ footer {
 }
 
 /*** About - Our Story ***/
+.about-banner {
+  background-color: $light_brown;
+  height: 710px;
+  margin-bottom: 5px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+
+  &:before {
+    background-image: url('images/banner-bottom.png');
+    content: '';
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    z-index: 1;
+    height: 24px;
+    width: 100%;
+  }
+
+  .flexwrap {
+    @include flexgroup-center();
+    @include flexbox-justify(space-between);
+    @include flexbox-align-items(center);
+  }
+
+  &-content {
+    width: 50%;
+    padding-right: 50px;
+  }
+
+  &-title {
+    color: $brown;
+    font-size: 3.1rem;
+    max-width: 626px;
+  }
+
+  &-desciption {
+    color: $brown;
+    font-size: 1.25rem;
+    line-height: 1.9rem;
+    margin-top: 35px;
+    margin-bottom: 40px;
+    max-width: 626px;
+  }
+
+  &-image {
+    height: 680px;
+    max-width: 580px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    &-wrap {
+      margin-top: 100px;
+      overflow: visible;
+      width: 50%;
+      position: relative;
+      @include flexbox();
+      @include flexbox-justify(flex-end);
+    }
+
+    &:after {
+      background-image: url('images/banner-about-frame.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 15px;
+      z-index: 2;
+      height: 100%;
+      max-width: 580px;
+      width: 100%;
+    }
+
+    &:before {
+      background-image: url('images/banner-green-ball.svg');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '';
+      position: absolute;
+      top: 12%;
+      right: -4%;
+      z-index: 2;
+      height: 150px;
+      width: 150px;
+    }
+
+    img {
+      border-radius: 400px 400px 0 0;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  @include max($tabwidth) {
+    height: auto;
+    padding-top: 80px;
+
+    &-title {
+      font-size: 3rem;
+    }
+  
+    &-desciption {
+      font-size: 1.2rem; 
+    }
+
+    &-content {
+      width: 60%;
+      padding-left: 30px;
+    }
+
+    &-image {
+      height: 100%;
+      margin: 0 auto;
+      max-width: 280px;
+
+      &:before {
+        background-size: 150px;
+      }
+
+      &:after {
+        top: -12px;
+        left: 12px;
+      }
+
+      &-wrap {
+        height: 450px;
+        width: 290px;
+
+        &:after {
+          top: -29px;
+          left: -70%;
+        }
+      }
+    }
+  }
+
+  @include max($deskwidth) {
+    height: auto;
+
+    &-content {
+      padding-top: 50px;
+    }
+
+    &-image {
+      height: 100%;
+      margin: 0 auto;
+      max-width: 380px;
+
+      &:before {
+        right: -10%;
+      }
+
+      &:after {
+        top: -12px;
+        left: 12px;
+      }
+
+      &-wrap {
+        height: 450px;
+      }
+    }
+  }
+
+  @include max($xswidth) {
+    height: auto;
+    padding-top: 50px;
+
+    &-title {
+      font-size: 3rem;
+    }
+  
+    &-desciption {
+      font-size: 1.2rem; 
+    }
+
+    &-content {
+      padding-top: 30px;
+      width: 100%;
+    }
+
+    .wrapper {
+      @include flexbox-direction(column-reverse);
+    }
+
+    &-image {
+      height: 100%;
+      margin: 0 auto;
+      max-width: 380px;
+
+      &:after {
+        top: -12px;
+        left: 12px;
+      }
+
+      &-wrap {
+        padding-right: 0;
+        height: 450px;
+        width: 380px;
+
+        &:after {
+          top: -25px;
+          left: -68%;
+        }
+      }
+    }
+  }
+}
+
+
+/*** About - Our Story ***/
 .our-story {
   background-color: $green;
   color: $white;
   position: relative;
+  z-index: 1;
 
   &-img {
-    border-radius: 400px 400px 0 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    height: 100%;
-    max-width: 705px;
+    position: relative;
+    z-index: 2;
+    height: 450px;
+    width: 100%;
+    overflow: hidden;
+
+    @include mid {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      height: 100%;
+      max-width: 705px;
+      width: 40%;
+    }
+
+    img {
+      border-radius: 400px 400px 0 0;
+      height: 100%;
+      position: relative;
+      object-fit: cover;
+      z-index: 3;
+      top: 19px;
+    }
+
+    &:after {
+      background-color: $pink;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      height: 100%;
+      max-width: 580px;
+      width: 100%;
+    }
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 3;
   }
 
   &-content {
-    width: 60%;
-    margin-left: 40%;
+    width: 100%;
+
+    @include mid {
+      margin-left: 45%;
+      width: 55%;
+    }
   }
 
   &-title {

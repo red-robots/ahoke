@@ -4,16 +4,22 @@
  */
 get_header(); ?>
 <div id="primary" class="content-area about-content">
-	<main id="main" class="site-main">
-		<?php while ( have_posts() ) : the_post(); ?>
-      <header class="entry-title">
-        <div class="wrapper">
-          <h1 class="page-title"><?php the_title(); ?></h1>
+  <?php while ( have_posts() ) : the_post(); ?>
+      <div class="about-banner">
+        <div class="wrapper flexwrap">
+          <div class="about-banner-content">
+            <h1 class="about-banner-title"><?php the_title(); ?></h1>
+            <section class="about-banner-desciption"><?php the_content(); ?></section>
+          </div>
+          <div class="about-banner-image-wrap">
+            <div class="about-banner-image">
+              <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
+            </div>
+          </div>
         </div>
-      </header>
-      <section class="entry-content fullwidth"><?php the_content(); ?></section>
-		<?php endwhile; ?>	
-	</main>
+      </div>
+    </div><!-- banner -->
+  <?php endwhile; ?>
 
   <?php
     $story = get_field("our_story");
