@@ -24,6 +24,46 @@ get_header();
       <section class="contact-content">
         <div class="wrapper">
           <?php
+            $rows = get_field("showroom", "option");
+            if( $rows ) {
+              foreach( $rows as $row ) {
+                $title = $row["showroom_title"];
+                $address = $row["address"];
+                $phone = $row["phone"];
+                $hours = $row["hours"];
+                $google_maps = $row["google_maps"];
+          ?>
+            <div class="contact-showroom flexwrap">
+              <div class="contact-details">
+                <div class="contact-showroom-title"><?php echo $title; ?></div>
+                <div class="contact-showroom-address"><?php echo $address; ?></div>
+                <div class="contact-showroom-phone">Phone: <?php echo $phone; ?></div>
+              </div>
+              <div class="contact-gmaps">
+                <?php echo $google_maps; ?>
+              </div>
+            </div>
+          <?php
+              }
+            }
+
+            if ( $map = get_field('googlemap','option') ) { ?>
+            <div class="right-col">
+              <div class="map">
+                <?php echo $map; ?>
+                <img src="<?php echo THEMEURI ?>/assets/images/rectangle.png" alt="" aria-hidden="true">
+              </div>
+            </div>
+          <?php } ?>
+        </div>
+
+        <?php if( $contact_form = get_field("gravity_form_shortcode") ){ ?>
+          <div class="contact-form wrapper">
+            <?php echo $contact_form; ?>
+          </div>
+        <?php } ?>
+
+        <?php
             $facebook = get_field("facebook", "option");
             $instagram = get_field("instagram", "option");
             $pinterest = get_field("pinterest", "option");
@@ -42,63 +82,15 @@ get_header();
               }
   
               if( $pinterest ){
-                echo "<a href='". $pinterest ."' target='_blank'><i class='fa-brands fa-pinterest-p'></i> Pinterest</a>";
+                echo "<a href='". $pinterest ."' class='pinterest' target='_blank'><i class='fa-brands fa-pinterest-p'></i> Pinterest</a>";
               }
   
               echo '</div>';
             }
           ?>
 
-          <?php
-
-            $rows = get_field("showroom", "option");
-            if( $rows ) {
-              foreach( $rows as $row ) {
-
-                echo "<div class='showroom'>";
-
-                $title = $row["showroom_title"];
-                $address = $row["address"];
-                $phone = $row["phone"];
-                $hours = $row["hours"];
-                $google_maps = $row["google_maps"];
-
-                echo "<div class='title'>". $title ."</div>";
-                echo "<div class='address'>". $address ."</div>";
-                echo "<div class='phone'>". $phone ."</div>";
-                echo "<div class='hours'>Hours:</div>";
-                echo "<div>". $hours ."</div>";
-
-                echo '</div>';
-          ?>
-            <div class="contact-showroom">
-              <div class="contact-details">
-                <div class="contact-title"><?php echo $title; ?></div>
-                <div class="contact-address"><?php echo $address; ?></div>
-                <div class="contact-phone"><?php echo $phone; ?></div>
-              </div>
-              <div class="contact-gmaps">
-                <?php echo $google_maps; ?>
-              </div>
-            </div>
-
-          <?php
-              }
-            }
-
-            if ( $map = get_field('googlemap','option') ) { ?>
-            <div class="right-col">
-              <div class="map">
-                <?php echo $map; ?>
-                <img src="<?php echo THEMEURI ?>/assets/images/rectangle.png" alt="" aria-hidden="true">
-              </div>
-            </div>
-          <?php } ?>
-
-        </div>
       </section>
-		<?php endwhile; ?>	
-
+		<?php endwhile; ?>
 	</main>
 </div>
 <?php

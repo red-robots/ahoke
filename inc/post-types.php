@@ -15,14 +15,14 @@ function js_custom_init() {
           'single'    => 'Team',
           'menu_icon' => 'dashicons-buddicons-buddypress-logo',
           'menu_position' => 10,
-          'supports'  => array('title','editor', 'author')
+          'supports'  => array('title', 'thumbnail')
         ),
         array(
             'post_type' => 'vendor',
             'menu_name' => 'Vendor',
             'plural'    => 'Vendors',
             'single'    => 'Vendor',
-            'menu_icon' => 'dashicons-buddicons-buddypress-logo',
+            'menu_icon' => 'dashicons-schedule',
             'menu_position' => 10,
             'supports'  => array('title','editor', 'author')
           ),
