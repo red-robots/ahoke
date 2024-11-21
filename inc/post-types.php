@@ -174,18 +174,6 @@ function set_custom_cpt_columns($columns) {
         $columns['bandname'] = __( 'Band', 'bellaworks' );
     }
 
-    if($post_type=='music') {
-        unset($columns['taxonomy-event-location']);
-        unset($columns['expirationdate']);
-        unset($columns['date']);
-        $columns['title'] = __( 'Name', 'bellaworks' );
-        $columns['show_on_homepage'] = __( 'Show on<br>Homepage', 'bellaworks' );
-        $columns['featimage'] = __( 'Image', 'bellaworks' );
-        $columns['taxonomy-event-location'] = __( 'Location', 'bellaworks' );
-        $columns['start_date'] = __( 'Start Date', 'bellaworks' );
-        $columns['expirationdate'] = __( 'Expires', 'bellaworks' );
-    }
-
     if($post_type=='post') {
         unset($columns['tags']);
         unset($columns['author']);
@@ -194,19 +182,8 @@ function set_custom_cpt_columns($columns) {
         unset($columns['expirationdate']);
         unset($columns['date']);
         $columns['title'] = __( 'Name', 'bellaworks' );
-        $columns['show_on_homepage'] = __( 'Show on<br>Homepage', 'bellaworks' );
-        $columns['taxonomy-activity_type'] = __( 'Activity', 'bellaworks' );
         $columns['categories'] = __( 'Category', 'bellaworks' );
         $columns['author'] = __( 'Author', 'bellaworks' );
-        $columns['date'] = __( 'Date', 'bellaworks' );
-        $columns['expirationdate'] = __( 'Expires', 'bellaworks' );
-    }
-
-    if($post_type=='camp') {
-        unset($columns['expirationdate']);
-        unset($columns['date']);
-        $columns['title'] = __( 'Name', 'bellaworks' );
-        $columns['eventdate'] = __( 'Event Dates', 'bellaworks' );
         $columns['date'] = __( 'Date', 'bellaworks' );
         $columns['expirationdate'] = __( 'Expires', 'bellaworks' );
     }

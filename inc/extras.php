@@ -1817,26 +1817,26 @@ function getFaqs($post_id) {
 }
 
 /* Remove ACF Fields on specific post */
-$postid = ( isset($_GET['post']) && $_GET['post'] ) ? $_GET['post'] : 0;
+/* $postid = ( isset($_GET['post']) && $_GET['post'] ) ? $_GET['post'] : 0;
 if ( ($pagenow == 'post.php' && get_post_type($postid) == 'instructions') ||  ($pagenow == 'post-new.php' && $_GET['post_type'] == 'instructions') ) {
     add_action('admin_head', 'ins_custom_admin_css');
     function ins_custom_admin_css() { ?>
-    <style type="text/css">
+    <style type="text/css"> */
         /*#instructions-template-tabs,
         #instructions-template-add-toggle{display:none!important;}
         #instructions-template-all.tabs-panel {
             border: none;
         }*/
-    </style>
+    /* </style>
     <?php
     }
     add_action('admin_footer', 'ins_custom_admin_js');
     function ins_custom_admin_js() { ?>
     <script type="text/javascript">
-    jQuery(document).ready(function($){
+    jQuery(document).ready(function($){ */
 
       /* This will add a category as `Default` */
-      if( $('#instructions-templatechecklist li input[type="checkbox"]').length>0 ) {
+      /* if( $('#instructions-templatechecklist li input[type="checkbox"]').length>0 ) {
         var hasChecks = [];
 
         $('#instructions-templatechecklist li input[type="checkbox"]').on("click",function(){
@@ -1878,7 +1878,7 @@ if ( ($pagenow == 'post.php' && get_post_type($postid) == 'instructions') ||  ($
     </script>
     <?php
     }
-}
+} */
 
 /* Remove Category Meta Box on Instructions Post type */
 // add_action( 'admin_menu' , 'remove_instructions_categories');

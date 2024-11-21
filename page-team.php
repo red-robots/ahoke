@@ -3,7 +3,7 @@
  * Template Name: Team
  */
 get_header(); ?>
-<div id="primary" class="content-area team-page padding-tb-100">
+<div id="primary" class="content-area team-page">
 	<main id="main" class="site-main wrapper">
 		<?php
       while ( have_posts() ) : the_post();
@@ -40,20 +40,22 @@ get_header(); ?>
     );
     $teams = new WP_Query($arrs);
 
+    $count_xs = 1;
+    $count_tab = 1;
+
     if ( $teams->have_posts() ) { ?>
     <section class="team-members wrapper">
       <div class="flexwrap">
         <?php
           while ( $teams->have_posts() ) : $teams->the_post();
             $team_id = get_the_ID();
-            echo $team_id;
-            $placeholder = THEMEURI . 'assets/images/image-not-available.jpg';
+            $placeholder = THEMEURI . '/images/image-not-available.jpg';
             $photo = get_the_post_thumbnail( get_the_ID(), 'medium' );
             $position = get_field('team_position');
             $email = get_field('team_email');
           ?>
           <div class="team-member">
-            <div class="photo">
+            <div class="team-photo">
               <?php if ($photo) { ?>
                 <?php echo $photo; ?>
               <?php } else { ?>
@@ -68,6 +70,17 @@ get_header(); ?>
               <a href="mailto:<?php echo $email; ?>" class="team-email"><?php echo $email; ?></a>
             </div>
           </div>
+          <?php
+            if( $count_xs % 2 == 0 ){
+              echo "<div class='divider divider-xs'></div>";
+            }
+            $count_xs++;
+
+            if( $count_tab % 3 == 0 ){
+              echo "<div class='divider divider-tab'></div>";
+            }
+            $count_tab++;
+          ?>
         <?php endwhile;  ?>
       </div>
     </section>

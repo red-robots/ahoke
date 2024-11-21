@@ -471,8 +471,8 @@ h6 {
 /*** Footer ***/
 footer {
   background-color: $light_brown;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   .footer-logo {
     width: 25%;
@@ -1503,29 +1503,38 @@ footer {
 /*** Team page ***/
 .team {
   &-page {
+    border-bottom: 3px solid $border_cream;
     background-color: $light_brown;
+    background-image: url('images/bg-team.svg');
+    background-size: cover;
+    overflow: hidden;
+    padding-top: 70px;
+    padding-bottom: 30px;
+
+    @include tab { padding-top: 100px; }
 
     .wrapper {
-      max-width: $deskwidth;
+      max-width: 1080px;
     }
+  }
 
-    &:before {
-      background-image: url('images/three-rings.svg');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
-      content: '';
-      position: absolute;
-      bottom: -50px;
-      right: -150px;
-      z-index: 2;
-      height: 381px;
-      width: 374px;
+  &-photo {
+    height: 445px;
+    width: 100%;
+
+    img {
+      border-radius: 300px 300px 0 0;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      height: 100%;
     }
   }
 
   &-name {
     color: $brown;
     font-size: 1.9em; //30px
+    margin: 25px 0 15px;
   }
 
   &-email,
@@ -1535,8 +1544,6 @@ footer {
   }
 
   &-email {
-    text-decoration: none;
-
     &:hover {
       color: $green;
     }
@@ -1544,18 +1551,44 @@ footer {
 
   &-banner {
     margin-bottom: 80px;
+    padding-top: 50px;
 
-    @include desk { margin-bottom: 200px; }
+    @include tab { padding-top: 0; }
+    @include desk { margin-bottom: 120px; }
 
     .flexwrap {
       @include flexgroup-center();
       @include flexbox-justify(space-between);
       @include flexbox-align-items(center);
+      position: relative;
+
+      @include max($tabwidth) {
+        @include flexbox-direction(column-reverse);
+      }
+
+      &:after {
+        background-color: $pink;
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 1;
+        height: 10px;
+        width: 100%;
+
+        @include tab { width: 50%; }
+      }
     }
   
     &-content {
-      width: 50%;
-      padding-right: 50px;
+      padding-top: 50px;
+      width: 100%;
+      
+      @include tab {
+        width: 50%;
+        padding-top: 0;
+        padding-right: 50px;
+      }
     }
   
     &-desciption {
@@ -1564,7 +1597,8 @@ footer {
       line-height: 1.9rem;
       margin-top: 35px;
       margin-bottom: 40px;
-      max-width: 626px;
+
+      @include tab { max-width: 626px; }
     }
   
     &-image {
@@ -1603,104 +1637,74 @@ footer {
         object-fit: cover;
         height: 100%;
       }
-    }
-  
-    @include max($tabwidth) {
-      height: auto;
-      padding-top: 80px;
-  
-      &-title {
-        font-size: 3rem;
-      }
-    
-      &-desciption {
-        font-size: 1.2rem; 
-      }
-  
-      &-content {
-        width: 60%;
-        padding-left: 30px;
-      }
-  
-      &-image {
-        height: 100%;
-        margin: 0 auto;
-        max-width: 280px;
-  
-        &:after {
-          top: -12px;
-          left: 12px;
-        }
-  
-        &-wrap {
-          height: 450px;
-          width: 290px;
-  
-          &:after {
-            top: -29px;
-            left: -70%;
-          }
-        }
-      }
-    }
-  
-    @include max($deskwidth) {
-      height: auto;
-  
-      &-content {
-        padding-top: 50px;
-      }
-  
-      &-image {
-        height: 100%;
-        margin: 0 auto;
-        max-width: 380px;
-  
-        &:after {
-          top: -12px;
-          left: 12px;
-        }
-  
-        &-wrap {
-          height: 450px;
-        }
-      }
-    }
-  
-    @include max($xswidth) {
-      height: auto;
-      padding-top: 50px;
-  
-      &-title {
-        font-size: 3rem;
-      }
-    
-      &-desciption {
-        font-size: 1.2rem; 
-      }
-  
-      &-content {
-        padding-top: 30px;
-        width: 100%;
-      }
-  
-      .flexwrap {
-        @include flexbox-direction(column-reverse);
-      }
-  
-      &-image {
+
+      @include max($deskwidth) {     
         height: 100%;
         margin: 0 auto;
         max-width: 300px;
-  
+      }
+
+      @include max($tabwidth) {    
+        max-width: 280px;
+
         &:after {
           top: -12px;
           left: 12px;
         }
       }
+
+      @include max($xswidth) {
+        height: 100%;
+        margin: 0 auto;
+        max-width: 300px;
+      }
     }
   }
+
+  &-members {
+    .flexwrap {
+      @include flexbox-justify(space-between);
+    }
+
+    .divider {
+      @include clearfix();
+      background-color: $border_cream;
+      height: 3px;
+      width: 100%;
+      display: none;
+
+      &-xs {
+        @include xs { display: table; }
+        @include tab { display: none; }
+      }
+
+      &-tab {
+        @include tab { display: table; }
+      }
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  &-member {
+    border-bottom: 3px solid $border_cream;
+    margin-top: 50px;
+    padding-bottom: 50px;
+    width: 100%;
+
+    &:last-child {
+      border: 0;
+    }
+
+    @include xs { border: 0; margin-top: 70px; padding-bottom: 70px; width: 48%; }
+    @include tab { margin-bottom: 70px; width: 30%; }
+  }
 }
+
+/*** Events ***/
+
 
 /*** Contact page ***/
 .contact-page {
