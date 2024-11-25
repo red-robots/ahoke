@@ -1663,7 +1663,8 @@ footer {
 
   &-members {
     .flexwrap {
-      @include flexbox-justify(space-between);
+      @include flexbox-justify(flex-start);
+      gap: 5%;
     }
 
     .divider {
@@ -1698,13 +1699,336 @@ footer {
       border: 0;
     }
 
-    @include xs { border: 0; margin-top: 70px; padding-bottom: 70px; width: 48%; }
-    @include tab { margin-bottom: 70px; width: 30%; }
+    @include xs {
+      border: 0;
+      margin-top: 70px;
+      padding-bottom: 70px;
+      width: 47%;
+    }
+
+    @include tab {
+      margin-bottom: 70px;
+      width: 30%;
+    }
   }
 }
 
 /*** Events ***/
+// The tag container
+.tag-container {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+}
 
+// The tag itself
+.tag {
+  min-width: 182px;
+  height: 30px;
+  background-color: $pink;
+  position: relative;
+  padding: 7px 15px;
+  display: inline-block;
+}
+
+// The title of the tag
+.tag-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 15px;
+  color: $white;
+}
+
+// The tails of the tag
+.tag-tail {
+  position: absolute;
+  top: 0;
+  right: -15px;
+}
+
+[class^="tag-tail"]:after,
+[class^="tag-tail"].tag-tail:before {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+}
+
+.tag-tail:after {
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid $pink;
+}
+
+.tag-tail:before {
+  border-right: 15px solid transparent;
+  border-top: 15px solid $pink;
+}
+
+.tag.tag-drop:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-right: 12px solid transparent;
+  border-top: 16px solid $pink;
+  display: block;
+  position: absolute;
+  bottom: -16px;
+  left: 0;
+}
+
+.events {
+  &-page {
+    background-color: $white;
+
+    .btn-green {
+      height: 38px;      
+      min-width: 148px;
+      max-width: 148px;
+      padding: 7px 20px;
+    }
+  }
+  
+  &-banner {
+    background-image: url('images/banner-events-bg.png');
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    padding-top: 50px;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+
+    @include desk { padding-top: 0; }
+
+    .flexwrap {
+      @include flexgroup-center();
+      @include flexbox-justify(space-between);
+      @include flexbox-align-items(center);
+      position: relative;
+
+      @include max($tabwidth) {
+        @include flexbox-direction(column-reverse);
+      }
+    }
+  
+    &-content {
+      max-width: 655px;
+      width: 50%;
+
+      h1 {
+        color: $brown;
+        font-size: 3.15em; //50px
+        line-height: 2.3rem;
+        margin-bottom: 70px;
+      }
+      
+      @include max($tabwidth) {
+        width: 100%;
+      }
+    }
+
+    &-details {
+      background-color: $white;
+      border-radius: 0 0 20px 0;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      padding: 50px;
+      position: relative;
+
+      .events-date {
+        font-family: $font-raleway-semibold;
+        font-size: 1.25rem; //20px
+      }
+    }
+
+    &-image {
+      height: 570px;
+      max-width: 525px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+  
+      &-wrap {
+        overflow: visible;
+        width: 50%;
+        position: relative;
+        @include flexbox();
+        @include flexbox-justify(flex-end);
+
+        &:after {
+          background-image: url('images/events-floral.svg');
+          background-repeat: no-repeat;
+          background-size: 100%;
+          content: '';
+          position: absolute;
+          top: -50px;
+          right: -90px;
+          z-index: 1;
+          height: 470px;
+          width: 335px;
+        }
+      }
+
+      &:before {
+        background-image: url('images/banner-green-ball.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        content: '';
+        position: absolute;
+        top: 30%;
+        left: -15%;
+        z-index: 2;
+        height: 144px;
+        width: 144px;
+      }
+  
+      &:after {
+        background-image: url('images/banner-events-frame.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 15px;
+        z-index: 2;
+        height: 100%;
+        max-width: 580px;
+        width: 100%;
+      }
+  
+      img {
+        border-radius: 300px 300px 0 0;
+        position: relative;
+        z-index: 1;
+        object-fit: cover;
+        height: 100%;
+      }
+
+      @include max($deskwidth) {     
+        height: 100%;
+        margin: 0 auto;
+        max-width: 340px;
+
+        &:before {
+          height: 100px;
+          width: 100px;
+        }
+
+        &-wrap {
+          &:after {
+            height: 370px;
+            width: 300px;
+            right: 0;
+          }
+        }
+      }
+
+      @include max($tabwidth) {    
+        max-width: 280px;
+
+        &-wrap {
+          margin-bottom: 50px;
+
+          &:after {
+            height: 320px;
+            width: 270px;
+            right: -35px;
+          }
+        }
+      }
+
+      @include max($xswidth) {
+        width: 340px;
+
+        &:before {
+          height: 70px;
+          width: 70px;
+        }
+
+        &-wrap {
+          width: 100%;
+          max-width: 340px;
+
+          &:after {
+            height: 320px;
+            width: 270px;
+            right: -70px;
+          }
+        }
+      }
+    }
+  }
+
+  &-photo {
+    height: 200px;
+    width: 100%;
+
+    img {
+      border-radius: 10px 10px 0 0;
+      position: relative;
+      z-index: 1;
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &-title {
+    color: $brown;
+    font-size: 1.9em; //30px
+    line-height: 2.3rem;
+    margin-bottom: 30px;
+  }
+
+  &-date,
+  &-start-end,
+  &-location {
+    color: $blue;
+    font-family: $font-raleway-semibold;
+    line-height: 22px;
+  }
+
+  &-wrapper {
+    .flexwrap {
+      @include flexbox-justify(flex-start);
+      gap: 5%;
+    }
+  }
+
+  &-item {
+    border: 1px solid $border_cream;
+    border-radius: 10px;
+    margin-top: 50px;
+    width: 100%;
+    @include flexbox();
+    @include flexbox-direction(column);
+
+    @include xs {
+      width: 47%;
+    }
+
+    @include desk {
+      width: 30%;
+    }
+  }
+
+  &-content {
+    line-height: 22px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  &-details {
+    flex: 1;
+    padding: 30px;
+
+    @include flexbox();
+    @include flexbox-direction(column);
+    @include flexbox-justify(space-between);
+
+    .events-content {
+      margin-bottom: 70px;
+    }
+  }
+}
 
 /*** Contact page ***/
 .contact-page {
