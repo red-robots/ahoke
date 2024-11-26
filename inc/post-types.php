@@ -24,7 +24,7 @@ function js_custom_init() {
             'single'    => 'Vendor',
             'menu_icon' => 'dashicons-schedule',
             'menu_position' => 10,
-            'supports'  => array('title','editor', 'author')
+            'supports'  => array('title')
           ),
     );
     

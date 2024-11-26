@@ -1466,7 +1466,32 @@ footer .social-media a .fa{fill:#ede9e3}
 .diff-exp .exp-item .exp-feat-img img{-o-object-fit:cover;object-fit:cover;height:100%}
 .diff-exp .exp-item .exp-title{color:#84735e;font-size:25px;margin-top:30px;margin-bottom:20px}
 .diff-exp .exp-item .exp-content{font-size:20px;line-height:30px}
-.team-page{border-bottom:3px solid #dbd0bd;background-color:#ede9e3;background-image:url("images/bg-team.svg");background-size:cover;overflow:hidden;padding-top:70px;padding-bottom:30px}
+.page-template-page-team footer,.page-template-page-vendors footer{border-top:3px solid #dbd0bd}
+.vendors-page{background-color:#ede9e3}
+.vendors-banner{position:relative}
+.vendors-banner:after{background-color:#d4b2a7;content:"";position:absolute;top:0;right:0;z-index:1;height:100%;width:278px}
+.vendors-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;padding-top:50px;padding-bottom:60px}
+.vendors-banner-content{font-size:1.25rem;max-width:585px;width:50%}
+.vendors-banner-content h1{color:#84735e;font-size:3.15em;line-height:2.3rem;margin-bottom:70px}
+.vendors-banner-details{background-color:#fff;border-radius:0 0 20px 0;-webkit-box-shadow:0 3px 6px rgba(0,0,0,.1);box-shadow:0 3px 6px rgba(0,0,0,.1);padding:50px;position:relative}
+.vendors-banner-details .events-date{font-family:"Raleway Semibold";font-size:1.25rem}
+.vendors-banner-image{height:570px;max-width:525px;width:100%;position:relative;z-index:2}
+.vendors-banner-image-wrap{overflow:visible;width:50%;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.vendors-banner-image:before{background-image:url("images/banner-green-ball.svg");background-repeat:no-repeat;background-size:100%;content:"";position:absolute;top:30%;left:-15%;z-index:2;height:144px;width:144px}
+.vendors-banner-image:after{background-image:url("images/banner-events-frame.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;top:-15px;left:15px;z-index:2;height:100%;max-width:580px;width:100%}
+.vendors-banner-image img{border-radius:300px 300px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
+.vendors-anchor{background-color:#fff;border-radius:50px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:50px;padding:10px 20px}
+.vendors-anchor span{color:#ede9e3;font-family:"PlayfairDisplay Regular";font-size:1.9em;position:relative;z-index:2}
+.vendors-anchor a{display:inline-block;text-decoration:none;position:relative;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out}
+.vendors-anchor a span{color:#84735e}
+.vendors-anchor a:after{content:"";background-color:#91a796;border-radius:50%;position:absolute;left:50%;top:0;-webkit-transform:translateX(-50%);transform:translateX(-50%);height:38px;width:38px;z-index:1;-webkit-transition:all .3s ease-in-out;transition:all .3s ease-in-out;opacity:0}
+.vendors-anchor a:hover span{color:#fff}
+.vendors-anchor a:hover:after{opacity:1}
+.vendors-lists{margin-bottom:60px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.vendors-lists .letter{border-bottom:3px solid #dbd0bd;color:#84735e;font-size:3.15em;line-height:2.3rem;padding-bottom:10px}
+.vendors-letter{width:82px}
+.vendors-item{background-color:#fff;border-radius:3px;margin-bottom:15px;padding:15px;width:100%}
+.team-page{background-color:#ede9e3;background-image:url("images/bg-team.svg");background-size:cover;overflow:hidden;padding-top:70px;padding-bottom:30px}
 .team-page .wrapper{max-width:1080px}
 .team-photo{height:445px;width:100%}
 .team-photo img{border-radius:300px 300px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
@@ -1548,6 +1573,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .contact-page .notice{background-color:#fff;border-radius:25px;color:#84735e;font-family:"Raleway Semibold";font-style:italic;padding:15px 40px}
 @media(min-width:600px){.brands .brand-item{width:49%}
 .diff-exp .exp-item{margin-bottom:30px;width:49%}
+.vendors-item{width:47%}
 .team-members .divider-xs{display:table}
 .team-member{border:0;margin-top:70px;padding-bottom:70px;width:47%}
 .events-item{width:47%}
@@ -1559,6 +1585,7 @@ h4{font-size:1.8rem}
 h5{font-size:1.5rem}
 h6{font-size:1.2rem}
 .site-header{position:relative;top:0;left:0;width:100%;z-index:1}
+.vendors-anchor{margin-bottom:70px}
 .team-page{padding-top:100px}
 .team-banner{padding-top:0}
 .team-banner .flexwrap:after{width:50%}
@@ -1578,6 +1605,8 @@ h6{font-size:1.2rem}
 .brands .brand-item{width:24%}
 .our-story:before{height:82px}
 .diff-exp .exp-item{width:24%}
+.vendors-anchor{margin-bottom:120px}
+.vendors-item{width:30%}
 .team-banner{margin-bottom:120px}
 .events-banner{padding-top:0}
 .events-item{width:30%}
@@ -1604,6 +1633,8 @@ h6{font-size:1.2rem}
 .about-banner-image:before{right:-10%}
 .about-banner-image:after{top:-12px;left:12px}
 .about-banner-image-wrap{height:450px}
+.vendors-banner-image{height:100%;margin:0 auto;max-width:340px}
+.vendors-banner-image:before{height:100px;width:100px}
 .team-banner-image{height:100%;margin:0 auto;max-width:300px}
 .events-banner-image{height:100%;margin:0 auto;max-width:340px}
 .events-banner-image:before{height:100px;width:100px}
@@ -1672,6 +1703,10 @@ footer .social-media{margin-top:30px;width:30%}
 .about-banner-image:after{top:-12px;left:12px}
 .about-banner-image-wrap{height:450px;width:290px}
 .about-banner-image-wrap:after{top:-29px;left:-70%}
+.vendors-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+.vendors-banner-content{width:100%}
+.vendors-banner-image{max-width:280px}
+.vendors-banner-image-wrap{margin-bottom:50px}
 .team-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .team-banner-image{max-width:280px}
 .team-banner-image:after{top:-12px;left:12px}
@@ -1704,6 +1739,10 @@ footer .social-media a{margin-left:0;margin-right:15px}
 .about-banner-image:after{top:-12px;left:12px}
 .about-banner-image-wrap{padding-right:0;height:450px;width:380px}
 .about-banner-image-wrap:after{top:-25px;left:-68%}
+.vendors-banner-image{width:340px}
+.vendors-banner-image:before{height:70px;width:70px}
+.vendors-banner-image-wrap{width:100%;max-width:340px}
+.vendors-banner-image-wrap:after{height:320px;width:270px;right:-70px}
 .team-banner-image{height:100%;margin:0 auto;max-width:300px}
 .events-banner-image{width:340px}
 .events-banner-image:before{height:70px;width:70px}
