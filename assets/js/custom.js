@@ -974,6 +974,52 @@ jQuery(document).ready(function ($) {
       $(this).find('.accordion-details').slideUp();
     });
     parent.toggleClass('active');
+  }); // Mindy
+  // Show icon to scroll up
+
+  $(window).scroll(function () {
+    var top = $('.scroll-top');
+    /* Check the location of each desired element */
+
+    var initial_position = $('.vendors-anchor').offset().top + $(window).height() + 300;
+    var hide_icon = initial_position - 200;
+    var bottom_of_window = $(window).scrollTop() + $(window).height();
+    /* If the object is completely visible in the window, fade it in */
+
+    if (bottom_of_window > initial_position) {
+      top.stop(true, true).animate({
+        'opacity': '1'
+      }, 100);
+    }
+    /* Hide Icon */
+
+
+    if (bottom_of_window < hide_icon) {
+      top.stop(true, true).animate({
+        'opacity': '0'
+      }, 100);
+    }
+  }); // Vendors Category
+
+  $('.category-filter').on('change', function () {
+    var target = $(this).data('target');
+
+    if (target == "all") {
+      $('.vendors-item').show();
+      $('.vendors-lists').show();
+    } else {
+      $('.vendors-item').hide();
+      $('.vendors-item.' + target).show();
+      $('.vendors-item.' + target).parent().parent().show();
+    }
+
+    $('.vendors-lists').each(function () {
+      if ($(this).find('.vendors-item:visible').length == 0) {
+        $(this).hide();
+      } else {
+        $(this).show();
+      }
+    });
   });
 }); // END #####################################    END
 "use strict";

@@ -6,19 +6,19 @@ get_header(); ?>
 <div id="primary" class="content-area vendors-page">
 	<main id="main" class="site-main vendors-banner">
 		<?php while ( have_posts() ) : the_post(); ?>
-        <div class="wrapper">
-          <div class="flexwrap">
-            <div class="vendors-banner-content">
-              <h1><?php the_title(); ?></h1>
-              <?php the_content(); ?>
-            </div>
-            <div class="vendors-banner-image-wrap">
-              <div class="vendors-banner-image">
-                <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
-              </div>
+        <div class="wrapper flexwrap">
+          <div class="vendors-banner-content">
+            <h1><?php the_title(); ?></h1>
+            <?php the_content(); ?>
+          </div>
+        </div><!-- wrapper -->
+        <?php if (has_post_thumbnail( $post->ID ) ): ?>
+          <div class="vendors-banner-image-wrap">
+            <div class="vendors-banner-image">
+              <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
             </div>
           </div>
-        </div><!-- banner -->
+        <?php endif; ?>
 		<?php endwhile; ?>
 	</main>
 
@@ -34,6 +34,8 @@ get_header(); ?>
     );
     $vendors = get_posts($arrs);
 
+    $vendors_cat = array();
+
     foreach($vendors as $vendor) {
       $i = strtoupper( substr( $vendor->post_title, 0, 1 ) );
       if(empty($vendors_array[$i])) {
@@ -45,7 +47,7 @@ get_header(); ?>
 
     if(count($vendors_initials)):
   ?>
-    <section class="vendors-wrapper wrapper padding-tb-150">
+    <section id="top" class="vendors-wrapper wrapper padding-tb-150">
       <div class="vendors-anchor flexwrap">
         <?php
           foreach( range( 'A', 'Z' ) as $letter ) {
@@ -58,26 +60,58 @@ get_header(); ?>
         ?>
       </div>
       <div class="vendors-container">
-        <div class="vendors-filter"></div>
-        <div class="">
+        <div class="vendors-listing">
           <?php foreach($vendors_array as $letter => $vendors): ?>
             <div class="vendors-lists">
-              <div class="vendor-letter">
+              <div class="vendors-letter">
                 <h4 id="<?=$letter?>" class="letter"><?=$letter?></h4>
               </div>
               <div class="flexwrap">
-                <?php foreach($vendors as $vendor): ?>
-                  <div class="vendors-item">
+                <?php
+                  foreach($vendors as $vendor):
+
+                  $cats_array = array();
+                  $cats_slugs_array = array();
+                  $cats = wp_get_object_terms($vendor->ID, 'vendor-category');
+
+                  foreach($cats as $cat){
+                    $cats_array[] = $cat->name;
+                    $cats_slugs_array[] = $cat->slug;
+
+                    if( empty($vendors_cat[$cat->slug]) ){
+                      $vendors_cat[$cat->slug] = $cat;
+                    }
+                  }
+                ?>
+                  <a href="<?=$vendor->website?>" class="vendors-item <?=implode(' ', $cats_slugs_array)?>" target="_blank">
                     <h3 class="vendors-title"><?=$vendor->post_title?></h3>
-                    <div>#</div>
-                  </div>
+                    <div class="vendors-cat">#<?=implode(', ', $cats_array)?></div>
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                  </a>
                 <?php endforeach; ?>
               </div>
             </div>
           <?php endforeach; ?>
         </div>
+        <div class="vendors-filter">
+          <div class="by-category">By Category</div>
+          <label>All
+            <input checked type="radio" name="radio" class="category-filter" data-target="all">
+            <span class="checkmark"></span>
+          </label>
+          <?php
+            ksort($vendors_cat);
+            foreach( $vendors_cat as $cat):
+          ?>
+          <label><?=$cat->name?>
+            <input type="radio" name="radio" class="category-filter" data-target="<?=$cat->slug?>">
+            <span class="checkmark"></span>
+          </label>
+          <?php endforeach; ?>
+        </div>
       </div>
     </section>
+    <a href="#top" class="scroll-top"><i class="fa-solid fa-circle-chevron-up"></i></a>
   <?php
     endif;
   ?>

@@ -54,7 +54,7 @@ img {
   display: inline-block;
   color: $white;
   font-family: $font-raleway-semibold;
-  font-size: 18px;
+  font-size: 1.125rem; //18px
   height: 60px;
   padding: 19px 40px;
   text-decoration: none;
@@ -533,7 +533,7 @@ footer {
       border-radius: 30px;
       color: $white;
       display: inline-block;
-      font-size: 18px;
+      font-size: 1.125rem; //18px
       line-height: 1.7em;
       margin-left: 15px;
       width: 32px;
@@ -1512,7 +1512,29 @@ footer {
   }
 
   &-banner {
+    padding-top: 80px;
     position: relative;
+    overflow: hidden;
+    @include flexgroup-center();
+    @include flexbox-justify(space-between);
+    @include flexbox-align-items(center);
+    @include flexbox-direction(column-reverse);
+
+    @include mid {
+      padding-top: 50px;
+      padding-bottom: 70px;
+      @include flexbox-direction(row);
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 2;
+
+      @include mid {
+        width:  50%;
+        max-width: 585px;
+      }
+    }
 
     &:after {
       background-color: $pink;
@@ -1522,7 +1544,9 @@ footer {
       right: 0;
       z-index: 1;
       height: 100%;
-      width: 278px;
+      width: 100px;
+
+      @include xs { width: 278px; }
     }
 
     .flexwrap {
@@ -1539,18 +1563,12 @@ footer {
   
     &-content {
       font-size: 1.25rem; //20px
-      max-width: 585px;
-      width: 50%;
 
       h1 {
         color: $brown;
         font-size: 3.15em; //50px
         line-height: 2.3rem;
         margin-bottom: 70px;
-      }
-      
-      @include max($tabwidth) {
-        width: 100%;
       }
     }
 
@@ -1568,8 +1586,8 @@ footer {
     }
 
     &-image {
-      height: 570px;
-      max-width: 525px;
+      height: 618px;
+      max-width: 853px;
       width: 100%;
       position: relative;
       z-index: 2;
@@ -1588,15 +1606,15 @@ footer {
         background-size: 100%;
         content: '';
         position: absolute;
-        top: 30%;
-        left: -15%;
+        top: 20%;
+        left: -2%;
         z-index: 2;
         height: 144px;
         width: 144px;
       }
   
       &:after {
-        background-image: url('images/banner-events-frame.svg');
+        background-image: url('images/frame-vendors.svg');
         background-repeat: no-repeat;
         background-size: 100% 100%;
         content: '';
@@ -1605,22 +1623,31 @@ footer {
         left: 15px;
         z-index: 2;
         height: 100%;
-        max-width: 580px;
+        max-width: 853px;
         width: 100%;
       }
   
       img {
-        border-radius: 300px 300px 0 0;
+        border-radius: 500px 500px 0 0;
         position: relative;
         z-index: 1;
         object-fit: cover;
         height: 100%;
       }
 
+      @include max($xxxl) {     
+        max-width: 550px;
+        height: 400px;
+
+        &:before {
+          top: 13%;
+          left: -8%;
+        }
+      }
+
       @include max($deskwidth) {     
-        height: 100%;
-        margin: 0 auto;
-        max-width: 340px;
+        max-width: 400px;
+        height: 315px;
 
         &:before {
           height: 100px;
@@ -1628,16 +1655,9 @@ footer {
         }
       }
 
-      @include max($tabwidth) {    
-        max-width: 280px;
-
-        &-wrap {
-          margin-bottom: 50px;
-        }
-      }
-
-      @include max($xswidth) {
-        width: 340px;
+      @include max($midwidth) {    
+        max-width: 350px;
+        height: 250px;
 
         &:before {
           height: 70px;
@@ -1646,13 +1666,8 @@ footer {
 
         &-wrap {
           width: 100%;
-          max-width: 340px;
-
-          &:after {
-            height: 320px;
-            width: 270px;
-            right: -70px;
-          }
+          margin-bottom: 30px;
+          max-width: 350px;
         }
       }
     }
@@ -1661,11 +1676,12 @@ footer {
   &-anchor {
     background-color: $white;
     border-radius: 50px;
-    @include flexbox-justify(space-between);
+    @include flexbox-justify(flex-start);
     margin-bottom: 50px;
     padding: 10px 20px;
+    gap: 10px;
 
-    @include tab { margin-bottom: 70px; }
+    @include tab { gap: 0; margin-bottom: 70px; @include flexbox-justify(space-between); }
     @include desk { margin-bottom: 120px; }
 
     span {
@@ -1713,38 +1729,198 @@ footer {
     }
   }
 
-  &-lists {
-    margin-bottom: 60px;
+  &-container {
     @include flexbox();
-    @include flexbox-justify(space-between);
+    @include flexbox-wrap(wrap);
+	  @include flexbox-direction(column-reverse);
 
-    .letter {
-      border-bottom: 3px solid $border_cream;
+    @include xs {
+      @include flexbox-direction(row-reverse);
+
+      .vendors-listing {
+        margin-top: 0;
+      }
+    }
+  }
+
+  &-filter {
+    width: 100%;
+
+    @include xs {
+      width: 20%;
+    }
+
+    .by-category {
       color: $brown;
-      font-size: 3.15em; //50px
-      line-height: 2.3rem;
-      padding-bottom: 10px;
+      font-family: $font-raleway-semibold;
+      font-size: 1.25rem; //20px
+      margin-bottom: 25px;
+    }
+
+    /* The container */
+    label {
+      display: block;
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 1.1rem; //18px
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    label input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      border: 1px solid $brown;
+      position: absolute;
+      top: 2px;
+      left: 0;
+      height: 16px;
+      width: 16px;
+      background-color: transparent;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    label:hover input ~ .checkmark {
+      background-color: $border_cream;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    label input:checked ~ .checkmark {
+      background-color: $green;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    label input:checked ~ .checkmark:after {
+      display: block;
+    }
+  }
+
+  &-listing {
+    margin-top: 30px;
+    width: 100%;
+
+    @include xs {
+      width: 80%;
     }
   }
 
   &-letter {
-    width: 82px;
+    width: 20%;
+
+    .letter {
+      border-bottom: 3px solid $border_cream;
+      color: $brown;
+      display: inline-block;
+      font-size: 3.15em; //50px
+      line-height: 2.3rem;
+      padding-bottom: 10px;
+    }
+
+    @include xs { width: 82px;}
+  }
+
+  &-lists {
+    margin-bottom: 60px;
+    @include flexbox();
+    @include flexbox-justify(space-between);
+    width: 100%;
+
+    .flexwrap {
+      flex: 1;
+      gap: 2%;
+    }
   }
 
   &-item {
     background-color: $white;
     border-radius: 3px;
-    margin-bottom: 15px;
-    padding: 15px;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 15px 60px 15px 15px;
+    text-decoration: none;
     width: 100%;
+    position: relative;
 
     @include xs {
       width: 47%;
     }
 
     @include desk {
-      width: 30%;
+      width: 32%;
     }
+
+    &:hover {
+      background-color: $green;
+      text-decoration: none;
+
+      .vendors-title,
+      .vendors-cat,
+      .fa-circle-chevron-right {
+        color: $white;
+      }
+
+      .fa-circle-chevron-right {
+        opacity: 1;
+      }
+    }
+
+    .fa-circle-chevron-right {
+      font-size: 2rem; //32px
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      transform: translatey(-50%);
+      opacity: 0;
+    }
+  }
+
+  &-title {
+    color: $brown;
+    font-family: $font-playfair-regular;
+    font-size: 1.25rem; //20px
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  &-cat {
+    color: $green;
+    font-family: $font-raleway-semibold;
+    font-size: 1.125rem; //18px
+    text-transform: lowercase;
+  }
+}
+
+.scroll-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  opacity: 0;
+
+  @include xs {
+    right: 50px;
+    bottom: 50px;
+  }
+
+  .fa-circle-chevron-up {
+    font-size: 32px;
   }
 }
 
@@ -1980,7 +2156,7 @@ footer {
 
 // The title of the tag
 .tag-title {
-  font-size: 18px;
+  font-size: 1.125rem; //18px
   font-weight: 500;
   line-height: 15px;
   color: $white;
@@ -2342,7 +2518,7 @@ footer {
       a {
         display: inline-flex;
         color: $brown;
-        font-size: 18px;
+        font-size: 1.125rem; //18px
         line-height: 1.7em;
         margin-bottom: 30px;
         text-decoration: none;
@@ -2482,7 +2658,7 @@ footer {
         display: inline-block;
         color: $green;
         font-family: $font-raleway-semibold;
-        font-size: 18px;
+        font-size: 1.125rem; //18px
         height: 60px;
         padding: 19px 40px;
         text-decoration: none;
@@ -2505,5 +2681,184 @@ footer {
     font-family: $font-raleway-semibold;
     font-style: italic;
     padding: 15px 40px;
+  }
+}
+
+/*** Defaults ***/
+.content-default {
+  background-color: $white;
+  font-size: 18px;
+
+  &-title {
+    font-size: 1.25rem; //20px
+
+    h1 {
+      color: $brown;
+      font-size: 50px;
+    }
+  }
+
+  &-banner {
+    background-color: $light_brown;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+    @include flexgroup-center();
+    @include flexbox-justify(space-between);
+    @include flexbox-align-items(center);
+    @include flexbox-direction(column-reverse);
+
+    @include mid {
+      padding-top: 50px;
+      padding-bottom: 70px;
+      @include flexbox-direction(row);
+    }
+
+    .wrapper {
+      position: relative;
+      z-index: 2;
+
+      @include mid {
+        width:  50%;
+        max-width: 585px;
+      }
+    }
+
+    &:after {
+      background-color: $pink;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      height: 100%;
+      width: 100px;
+
+      @include xs { width: 278px; }
+    }
+
+    .flexwrap {
+      @include flexgroup-center();
+      @include flexbox-justify(space-between);
+      @include flexbox-align-items(center);
+      padding-top: 50px;
+      padding-bottom: 60px;
+
+      @include max($tabwidth) {
+        @include flexbox-direction(column-reverse);
+      }
+    }
+
+    &-image {
+      height: 618px;
+      max-width: 853px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+  
+      &-wrap {
+        overflow: visible;
+        width: 50%;
+        position: relative;
+        @include flexbox();
+        @include flexbox-justify(flex-end);
+      }
+
+      &:before {
+        background-image: url('images/banner-green-ball.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+        content: '';
+        position: absolute;
+        top: 20%;
+        left: -2%;
+        z-index: 2;
+        height: 144px;
+        width: 144px;
+      }
+  
+      &:after {
+        background-image: url('images/frame-vendors.svg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        position: absolute;
+        top: -15px;
+        left: 15px;
+        z-index: 2;
+        height: 100%;
+        max-width: 853px;
+        width: 100%;
+      }
+  
+      img {
+        border-radius: 500px 500px 0 0;
+        position: relative;
+        z-index: 1;
+        object-fit: cover;
+        height: 100%;
+      }
+
+      @include max($xxxl) {     
+        max-width: 550px;
+        height: 400px;
+
+        &:before {
+          top: 13%;
+          left: -8%;
+        }
+      }
+
+      @include max($deskwidth) {     
+        max-width: 400px;
+        height: 315px;
+
+        &:before {
+          height: 100px;
+          width: 100px;
+        }
+      }
+
+      @include max($midwidth) {    
+        max-width: 350px;
+        height: 250px;
+
+        &:before {
+          height: 70px;
+          width: 70px;
+        }
+
+        &-wrap {
+          width: 100%;
+          margin-bottom: 30px;
+          max-width: 350px;
+        }
+      }
+    }
+  }
+
+  section {
+    background-color: $white;
+
+    .resources {
+      margin-top: 30px;
+      
+      li {
+        margin-bottom: 15px;
+
+        a {
+          text-decoration: none;
+
+          &:hover {
+            color: $brown;
+          }
+        }
+
+        @include mid {
+          float: left;
+          width: 50%;
+        }
+      }
+    }
   }
 }

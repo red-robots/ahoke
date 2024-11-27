@@ -8,28 +8,19 @@
  */
 
 get_header(); ?>
-<?php  
-$t1 = get_field("404_title_small","option");
-$red = get_field("404_title_red","option");
-$text = get_field("404_text","option");
-$bg = get_field("404_bg_image","option");
-$style = ($bg) ? ' style="background-image:url('.$bg['url'].')"':'';
-?>
-<main id="main" class="site-main page404 custom404" role="main"<?php echo $style ?>>
+<main id="main" class="site-main page404 custom404 padding-tb-100" role="main">
 	<div class="wrapper">
-		<section class="content404">
-			<?php if ($t1) { ?>
-			<p class="t1"><small><?php echo $t1 ?></small></p>	
-			<?php } ?>
-			<?php if ($red) { ?>
-			<h2 class="t2"><span><?php echo $red ?></span></h2>	
-			<?php } ?>
-
-			<?php if ($text) { ?>
-			<div class="text"><?php echo $text ?></div>
-			<?php } ?>
-		</section>
+		<div class="small-title">404 ERROR</div>
+		<h1 class="page-title"><span>Page Not Found!</span></h1>
 	</div>
+	<section class="entry-content content404">
+      <div class="wrapper">
+        <div class="innerText">
+          <p>It looks like nothing was found at this location. Maybe try one of the links below.</p>
+		  <?php wp_nav_menu( array( 'container_class' => 'sitemap', 'theme_location' => 'primary' ) ); ?>
+        </div>
+      </div>
+    </section>
 </main>
 <?php
 get_footer();
