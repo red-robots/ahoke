@@ -22,7 +22,7 @@ get_header(); ?>
           </div>
           <div class="team-banner-image-wrap">
             <div class="team-banner-image">
-              <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
+              <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
             </div>
           </div>
         </div>
@@ -35,7 +35,7 @@ get_header(); ?>
       'posts_per_page'   => -1,
       'post_type'        => 'team',
       'post_status'      => 'publish',
-      'orderby'          => 'date',
+      'orderby'          => 'menu_order',
       'order'            => 'ASC'
     );
     $teams = new WP_Query($arrs);
@@ -50,7 +50,7 @@ get_header(); ?>
           while ( $teams->have_posts() ) : $teams->the_post();
             $team_id = get_the_ID();
             $placeholder = THEMEURI . '/images/image-not-available.jpg';
-            $photo = get_the_post_thumbnail( get_the_ID(), 'medium' );
+            $photo = get_the_post_thumbnail( get_the_ID(), 'large' );
             $position = get_field('team_position');
             $email = get_field('team_email');
           ?>

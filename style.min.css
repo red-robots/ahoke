@@ -1423,11 +1423,13 @@ footer .social-media a .fa{fill:#ede9e3}
 .brands{background-color:#ede9e3;text-align:center}
 .brands .brands-title{color:#84735e;margin-bottom:90px}
 .brands .brands-wrapper{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
-.brands .brand-item{background-color:#fff;margin-bottom:40px;padding:0 30px 30px;position:relative;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.brands .brand-item{background-color:#fff;display:inline-block;margin-bottom:40px;padding:0 30px 30px;position:relative;text-decoration:none;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .brands .brand-item::before{background-color:#ede9e3;content:"";height:30px;width:100%;position:absolute;top:0;left:0;z-index:0}
 .brands .brand-item .brand-feat-img{border-radius:150px 150px 0 0;max-width:210px;height:268px;overflow:hidden;position:relative;z-index:1}
 .brands .brand-item .brand-feat-img img{-o-object-fit:cover;object-fit:cover;height:100%}
 .brands .brand-item .brand-title{color:#84735e;font-size:25px;margin-top:30px}
+.brands .brand-item:hover{background-color:#91a796}
+.brands .brand-item:hover .brand-title{color:#fff}
 .cta{background-image:url("images/bg-green.svg");background-size:auto 100%;padding:15px;text-align:center}
 .cta-wrapper{border:3px solid #dbd0bd;padding:50px}
 .cta .cta-title,.cta .cta-description{color:#fff}

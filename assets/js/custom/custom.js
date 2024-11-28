@@ -1046,10 +1046,20 @@ var getGridSize = function() {
 		}
 	});
 
+	if($('.vendors-anchor').length && window.location.hash.length) {
+		var target = window.location.hash.replace('#', '');
+		$('input[data-target="'+ target +'"]').prop('checked', true);
+		apply_filter(target);
+	}
+
 	// Vendors Category
 	$('.category-filter').on('change', function(){
 		var target = $(this).data('target');
 
+		apply_filter(target);
+	});
+
+	function apply_filter(target) {
 		if(target == "all"){
 			$('.vendors-item').show();
 			$('.vendors-lists').show();
@@ -1066,7 +1076,6 @@ var getGridSize = function() {
 				$(this).show();
 			}
 		});
-	});
-
+	}
 
 });// END #####################################    END

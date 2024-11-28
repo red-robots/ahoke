@@ -1002,9 +1002,11 @@ footer {
 
   .brand-item {
     background-color: $white;
+    display: inline-block;
     margin-bottom: 40px;
     padding: 0 30px 30px;
     position: relative;
+    text-decoration: none;
     width: 100%;
 
     @include flexbox();
@@ -1056,6 +1058,14 @@ footer {
       color: $brown;
       font-size: 25px;
       margin-top: 30px;
+    }
+
+    &:hover {
+      background-color: $green;
+
+      .brand-title {
+        color: $white;
+      }
     }
   }
 }

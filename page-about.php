@@ -13,7 +13,7 @@ get_header(); ?>
         </div>
         <div class="about-banner-image-wrap">
           <div class="about-banner-image">
-            <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
+            <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
           </div>
         </div>
       </div>

@@ -22,10 +22,6 @@ get_header(); ?>
       $main_event = new WP_Query($arrs);
 
       while ( $main_event->have_posts() ) : $main_event->the_post();
-      
-        $placeholder = THEMEURI . '/images/image-not-available.jpg';
-        $photo = get_the_post_thumbnail( get_the_ID(), 'medium' );
-
         $event_date = get_field("event_date");
         $start_date = get_field("event_start_time");
         $end_date = get_field("event_end_time");
@@ -53,7 +49,7 @@ get_header(); ?>
             </div>
             <div class="events-banner-image-wrap">
               <div class="events-banner-image">
-                <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
+                <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
               </div>
             </div>
           </div>

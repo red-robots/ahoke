@@ -15,7 +15,7 @@ get_header(); ?>
         <?php if (has_post_thumbnail( $post->ID ) ): ?>
           <div class="vendors-banner-image-wrap">
             <div class="vendors-banner-image">
-              <?php echo get_the_post_thumbnail( get_the_ID(), 'medium' ); ?>
+              <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
             </div>
           </div>
         <?php endif; ?>

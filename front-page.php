@@ -51,8 +51,9 @@ get_header();
             <?php foreach( $brands as $brand ) {
                 $image = $brand["brand_image"];
                 $title = $brand["brand_title"];
+                $url = $brand["brand_category"];
             ?>
-              <div class="brand-item">
+              <a class="brand-item" href="/vendors/#<?=$url->slug ?? '' ?>">
                 <div class="brand-feat-img">
                   <?php if( !empty( $image ) ){ ?>
                     <img src="<?php echo esc_url($image["url"]); ?>" alt="<?php echo esc_attr($image["alt"]); ?>" />
@@ -61,7 +62,7 @@ get_header();
                   <?php } ?>
                 </div>
                 <h3 class="brand-title"><?php echo $title; ?></h3>
-              </div>
+              </a>
             <?php } ?>
           </div>
         <?php } ?>
