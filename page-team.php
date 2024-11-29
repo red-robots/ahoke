@@ -17,7 +17,7 @@ get_header(); ?>
           <div class="team-banner-content">
             <h1 class="team-name"><?php echo $name; ?></h1>
             <div class="team-position"><?php echo $position; ?></div>
-            <a href="mailto:<?php echo $email; ?>" class="team-email"><?php echo $email; ?></a>
+            <a href="mailto:<?php echo antispambot($email,1) ?>" class="team-email"><?php echo antispambot($email) ?></a>
             <section class="team-banner-desciption"><?php the_content(); ?></section>
           </div>
           <div class="team-banner-image-wrap">
@@ -67,7 +67,7 @@ get_header(); ?>
               <div class="team-position"><?php echo $position; ?></div>
             <?php } ?>
             <div>
-              <a href="mailto:<?php echo $email; ?>" class="team-email"><?php echo $email; ?></a>
+            <a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a>
             </div>
           </div>
           <?php
