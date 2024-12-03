@@ -1368,7 +1368,6 @@ h6{font-size:.85rem}
 #site-navigation ul.menu>li{float:left;position:relative;margin:0 30px}
 #site-navigation ul.menu>li:last-child{margin-right:0}
 #site-navigation ul.menu>li>a{padding:5px 0;position:relative;z-index:1000;border-bottom:1.5px solid transparent}
-#site-navigation ul.menu>li.current_page_item,#site-navigation ul.menu>li:hover{border-color:#392c1d}
 #site-navigation ul.menu ul{display:block;width:250px;background:rgba(132,115,94,.95);margin:0;padding:0;list-style:none;position:absolute;left:0;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;z-index:-999}
 #site-navigation ul.menu ul a{display:block;padding:5px 20px;color:#fff}
 #site-navigation ul.menu ul li.current_page_item>a,#site-navigation ul.menu ul>li:hover>a{opacity:.5}
@@ -1645,7 +1644,8 @@ h6{font-size:1.2rem}
 .team-member{margin-bottom:70px;width:30%}
 .contact-page .contact-showroom{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:70px}
 .contact-page .contact-details,.contact-page .contact-gmaps{width:50%}
-}@media(min-width:960px){.brands .brand-item{width:32%}
+}@media(min-width:960px){#site-navigation ul.menu>li.current_page_item>a,#site-navigation ul.menu>li:hover>a{border-color:#91a796}
+.brands .brand-item{width:32%}
 .our-story-img{position:absolute;bottom:0;left:0;z-index:2;height:100%;max-width:705px;width:40%}
 .our-story-content{margin-left:45%;width:55%}
 .diff-exp .exp-item{width:32%}
@@ -1715,8 +1715,9 @@ h6{font-size:1.2rem}
 #site-navigation ul.menu>li.menu-item-has-children>a i:before,#site-navigation ul.menu>li.menu-item-has-children>a i:after{content:"";display:block;width:13px;height:2px;background:#392c1d;position:absolute;top:35px;left:22px}
 #site-navigation ul.menu>li.menu-item-has-children>a i:before{-webkit-transform:translateY(-7px) rotate(45deg);transform:translateY(-7px) rotate(45deg)}
 #site-navigation ul.menu>li.menu-item-has-children>a i:after{-webkit-transform:translate(8px,-7px) rotate(-45deg);transform:translate(8px,-7px) rotate(-45deg)}
-#site-navigation ul.menu>li.current_page_item:hover>a,#site-navigation ul.menu>li.current_page_item>a{color:#392c1d}
+#site-navigation ul.menu>li:hover>a,#site-navigation ul.menu>li.current_page_item>a{color:#392c1d}
 #site-navigation ul.menu>li.current_page_item>a:before{content:"";display:block;width:7px;height:100%;position:absolute;top:0;left:0}
+#site-navigation ul.menu>li.current_page_item,#site-navigation ul.menu>li:hover{border-color:#392c1d}
 #site-navigation ul.menu>li.open-dropdown>ul.sub-menu{display:block !important;position:relative;opacity:1 !important;z-index:10000 !important;padding-top:10px !important;padding-bottom:10px !important}
 #site-navigation ul.menu>li>a:after{display:none !important}
 #site-navigation.active{right:0;z-index:10000}
@@ -1760,15 +1761,15 @@ footer .social-media{margin-top:30px;width:30%}
 .content-2 .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .content-2 .content,.content-2 .feat-img{width:100%}
 .content-2 .feat-img{margin-bottom:15px}
-.about-banner{height:auto;padding-top:80px}
+.about-banner{height:auto;padding-top:50px}
 .about-banner-title{font-size:3rem}
 .about-banner-desciption{font-size:1.2rem}
-.about-banner-content{width:60%;padding-left:30px}
-.about-banner-image{height:100%;margin:0 auto;max-width:280px}
-.about-banner-image:before{background-size:150px}
+.about-banner-content{padding-top:30px;padding-right:0;width:100%}
+.about-banner .wrapper{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+.about-banner-image{height:100%;margin:0 auto;max-width:380px}
 .about-banner-image:after{top:-12px;left:12px}
-.about-banner-image-wrap{height:450px;width:290px}
-.about-banner-image-wrap:after{top:-29px;left:-70%}
+.about-banner-image-wrap{padding-right:0;height:450px;width:380px}
+.about-banner-image-wrap:after{top:-25px;left:-68%}
 .vendors-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .team-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .team-banner-image{max-width:280px}
@@ -1794,15 +1795,6 @@ footer .social-media a{margin-left:0;margin-right:15px}
 .banner-image:after{top:-12px;left:12px}
 .banner-image-wrap{padding-right:0;height:450px;width:290px}
 .banner-image-wrap:after{top:-25px;left:-68%}
-.about-banner{height:auto;padding-top:50px}
-.about-banner-title{font-size:3rem}
-.about-banner-desciption{font-size:1.2rem}
-.about-banner-content{padding-top:30px;width:100%}
-.about-banner .wrapper{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
-.about-banner-image{height:100%;margin:0 auto;max-width:380px}
-.about-banner-image:after{top:-12px;left:12px}
-.about-banner-image-wrap{padding-right:0;height:450px;width:380px}
-.about-banner-image-wrap:after{top:-25px;left:-68%}
 .team-banner-image{height:100%;margin:0 auto;max-width:300px}
 .events-banner-image{width:340px}
 .events-banner-image:before{height:70px;width:70px}
