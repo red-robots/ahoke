@@ -1148,6 +1148,7 @@ footer {
   background-color: $light_brown;
   height: 710px;
   margin-bottom: 5px;
+  padding-top: 0;
   position: relative;
   width: 100%;
   z-index: 2;
@@ -1243,6 +1244,7 @@ footer {
 
   @include max($deskwidth) {
     height: auto;
+    padding-top: 50px;
 
     &-content {
       padding-top: 50px;
@@ -1293,25 +1295,22 @@ footer {
     &-image {
       height: 100%;
       margin: 0 auto;
-      max-width: 380px;
+      max-width: 280px;
 
-      &:after {
-        top: -12px;
-        left: 12px;
+      &:before {
+        background-size: 100px;
+        top: 9%;
+        right: -34%;
       }
 
       &-wrap {
-        padding-right: 0;
-        height: 450px;
-        width: 380px;
-
-        &:after {
-          top: -25px;
-          left: -68%;
-        }
+        height: 330px;
+        width: 290px;
       }
     }
   }
+
+  
 }
 
 /*** About - Our Story ***/

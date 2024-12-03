@@ -1438,7 +1438,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .content-2 .content{padding-right:5%;width:50%}
 .content-2 .title{color:#84735e;font-family:"PlayfairDisplay Regular";margin-bottom:30px}
 .content-2 .feat-img{border-radius:75px 0 75px 0;max-height:460px;overflow:hidden;width:50%}
-.about-banner{background-color:#ede9e3;height:710px;margin-bottom:5px;position:relative;width:100%;z-index:2}
+.about-banner{background-color:#ede9e3;height:710px;margin-bottom:5px;padding-top:0;position:relative;width:100%;z-index:2}
 .about-banner:before{background-image:url("images/banner-bottom.png");content:"";position:absolute;bottom:-24px;left:0;z-index:1;height:24px;width:100%}
 .about-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center}
 .about-banner-content{width:50%;padding-right:50px}
@@ -1685,7 +1685,7 @@ h6{font-size:1.2rem}
 .banner-image-wrap:after{top:-29px;left:-70%}
 .content-1{padding-left:30px;padding-right:30px}
 .content-1 .wrapper{background-size:34% 105%}
-.about-banner{height:auto}
+.about-banner{height:auto;padding-top:50px}
 .about-banner-content{padding-top:50px}
 .about-banner-image{height:100%;margin:0 auto;max-width:380px}
 .about-banner-image:before{right:-10%}
@@ -1766,10 +1766,9 @@ footer .social-media{margin-top:30px;width:30%}
 .about-banner-desciption{font-size:1.2rem}
 .about-banner-content{padding-top:30px;padding-right:0;width:100%}
 .about-banner .wrapper{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
-.about-banner-image{height:100%;margin:0 auto;max-width:380px}
-.about-banner-image:after{top:-12px;left:12px}
-.about-banner-image-wrap{padding-right:0;height:450px;width:380px}
-.about-banner-image-wrap:after{top:-25px;left:-68%}
+.about-banner-image{height:100%;margin:0 auto;max-width:280px}
+.about-banner-image:before{background-size:100px;top:9%;right:-34%}
+.about-banner-image-wrap{height:330px;width:290px}
 .vendors-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .team-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .team-banner-image{max-width:280px}
