@@ -630,12 +630,15 @@ footer {
   background-repeat: no-repeat;
   background-position: top right;
   background-size: 61px 100%;
-  height: 1000px;
-  padding-top: 100px;
+  padding-top: 150px;
+  padding-bottom: 100px;
   margin-bottom: 5px;
   position: relative;
   width: 100%;
   z-index: 2;
+
+  @include tab { padding-top: 100px; }
+  @include desk { height: 1000px; }
 
   .wrapper {
     z-index: 3;
@@ -644,7 +647,6 @@ footer {
   .swiper {
     overflow: visible;
     
-
     &-slide {
       overflow: visible;
     }
@@ -677,18 +679,40 @@ footer {
     max-width: $xxl;
     width: 100%;
     @include flexgroup-center();
+    @include flexbox-direction(column);
 
     &.swiper-slide {
       @include flexbox();
     }
+
+    @include tab {
+      @include flexbox-direction(row);
+      @include flexbox-justify(space-between);
+    }
   }
 
   &-image {
-    height: 883px;
-    max-width: 550px;
+    height: 100%;
+    margin: 0 auto;
+    max-width: 280px;
     width: 100%;
     position: relative;
     z-index: 2;
+
+    @include xs {
+      height: 620px;
+      max-width: 400px;
+    }
+
+    @include tab {
+      margin: 0;
+      height: 650px;
+      max-width: 550px;
+    }
+
+    @include desk {
+      height: 883px;
+    }
 
     &:after {
       background-image: url('images/banner-frame.svg');
@@ -696,24 +720,42 @@ footer {
       background-size: 100% 100%;
       content: '';
       position: absolute;
-      top: -15px;
-      left: 15px;
+      top: -12px;
+      left: 12px;
       z-index: 2;
       height: 100%;
       max-width: 550px;
       width: 100%;
+
+      @include tab {
+        top: -15px;
+        left: 15px;
+      }
     }
 
     &:before {
       background-image: url('images/banner-green-ball.svg');
       background-repeat: no-repeat;
+      background-size: 100%;
       content: '';
       position: absolute;
       top: 30%;
-      left: -25%;
+      left: -22%;
       z-index: 2;
-      height: 199px;
-      width: 199px;
+      height: 100px;
+      width: 100px;
+
+      @include xs {
+        left: -25%;
+        height: 150px;
+        width: 150px;
+      }
+
+      @include tab {
+        left: -25%;
+        height: 199px;
+        width: 199px;
+      }
     }
 
     img {
@@ -726,177 +768,71 @@ footer {
 
     &-wrap {
       overflow: visible;
-      width: 50%;
-      padding-right: 50px;
+      width: 290px;
+      height: 450px;
       position: relative;
+
+      @include xs {
+        height: 620px;
+        width: 440px;
+      }
+
+      @include tab {
+        height: 650px;
+        padding-right: 0;
+        width: 400px;
+      }
+
+      @include desk {
+        width: 50%;
+      }
 
       &:after {
         background-image: url('images/banner-floral-bg.svg');
         background-repeat: no-repeat;
         content: '';
         position: absolute;
-        top: -85px;
-        left: -30%;
+        top: -29px;
+        left: -70%;
         z-index: 1;
         height: 100%;
         width: 100%;
+
+        @include tab {
+          top: -85px;
+          left: -30%;
+        }
       }
     }
   }
 
   &-content {
-    width: 50%;
+    padding-top: 30px;
+    width: 100%;
+
+    @include tab {
+      width: 50%;
+      padding-left: 30px;
+    }
   }
 
   &-title {
     color: $brown;
-    font-size: 3.8rem;
+    font-size: 3rem;
     max-width: 626px;
+
+    @include tab { font-size: 3.8rem; }
   }
 
   &-desciption {
     color: $brown;
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
     font-style: italic;
     margin-top: 35px;
     margin-bottom: 50px;
     max-width: 626px;
-  }
 
-  @include max($xswidth) {
-    height: auto;
-    padding-top: 150px;
-
-    &-title {
-      font-size: 3rem;
-    }
-  
-    &-desciption {
-      font-size: 1.2rem; 
-    }
-
-    &-content {
-      padding-top: 30px;
-      width: 100%;
-    }
-
-    &-item {
-      @include flexbox-direction(column);
-    }
-
-    &-image {
-      height: 100%;
-      margin: 0 auto;
-      max-width: 280px;
-
-      &:before {
-        background-size: 150px;
-        left: -40%;
-      }
-
-      &:after {
-        top: -12px;
-        left: 12px;
-      }
-
-      &-wrap {
-        padding-right: 0;
-        height: 450px;
-        width: 290px;
-
-        &:after {
-          top: -25px;
-          left: -68%;
-        }
-      }
-    }
-  }
-
-  @include max($tabwidth) {
-    height: auto;
-    padding-top: 150px;
-
-    &-title {
-      font-size: 3rem;
-    }
-  
-    &-desciption {
-      font-size: 1.2rem; 
-    }
-
-    &-content {
-      padding-left: 30px;
-    }
-
-    &-image {
-      height: 100%;
-      margin: 0 auto;
-      max-width: 280px;
-
-      &:before {
-        background-size: 150px;
-        left: -40%;
-      }
-
-      &:after {
-        top: -12px;
-        left: 12px;
-      }
-
-      &-wrap {
-        padding-right: 0;
-        height: 450px;
-        width: 290px;
-
-        &:after {
-          top: -29px;
-          left: -70%;
-        }
-      }
-    }
-  }
-
-  @include max($deskwidth) {
-    height: auto;
-
-    &-title {
-      font-size: 3rem;
-    }
-  
-    &-desciption {
-      font-size: 1.2rem; 
-    }
-
-    &-content {
-      padding-left: 30px;
-    }
-
-    &-image {
-      height: 100%;
-      margin: 0 auto;
-      max-width: 280px;
-
-      &:before {
-        background-size: 150px;
-        left: -40%;
-      }
-
-      &:after {
-        top: -12px;
-        left: 12px;
-      }
-
-      &-wrap {
-        padding-right: 0;
-        height: 450px;
-        width: 40%;
-
-        &:after {
-          top: -29px;
-          left: -70%;
-        }
-      }
-    }
+    @include tab { font-size: 1.5rem; }
   }
 }
 
@@ -1579,10 +1515,12 @@ footer {
         content: '';
         position: absolute;
         top: 20%;
-        left: -2%;
+        left: -3%;
         z-index: 2;
         height: 144px;
         width: 144px;
+
+        @include mid { left: -6%; }
       }
   
       &:after {
@@ -1613,7 +1551,6 @@ footer {
 
         &:before {
           top: 13%;
-          left: -8%;
         }
       }
 
