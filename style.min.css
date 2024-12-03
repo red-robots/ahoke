@@ -1470,7 +1470,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .diff-exp .exp-item .exp-content{font-size:20px;line-height:30px}
 .page-template-page-team footer,.page-template-page-vendors footer{border-top:3px solid #dbd0bd}
 .vendors-page{background-color:#ede9e3}
-.vendors-banner{padding-top:80px;position:relative;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+.vendors-banner{padding-top:130px;position:relative;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .vendors-banner .wrapper{position:relative;z-index:2}
 .vendors-banner:after{background-color:#d4b2a7;content:"";position:absolute;top:0;right:0;z-index:1;height:100%;width:100px}
 .vendors-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;padding-top:50px;padding-bottom:60px}
@@ -1521,7 +1521,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .team-name{color:#84735e;font-size:1.9em;margin:25px 0 15px}
 .team-email,.team-position{color:#84735e;margin-bottom:15px}
 .team-email:hover{color:#91a796}
-.team-banner{margin-bottom:80px;padding-top:50px}
+.team-banner{margin-bottom:80px;padding-top:70px}
 .team-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;position:relative}
 .team-banner .flexwrap:after{background-color:#d4b2a7;content:"";position:absolute;bottom:0;left:0;z-index:1;height:10px;width:100%}
 .team-banner-content{padding-top:50px;width:100%}
@@ -1545,7 +1545,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .tag.tag-drop:before{content:"";width:0;height:0;border-right:12px solid transparent;border-top:16px solid #d4b2a7;display:block;position:absolute;bottom:-16px;left:0}
 .events-page{background-color:#fff}
 .events-page .btn-green{height:38px;min-width:148px;max-width:148px;padding:7px 20px}
-.events-banner{background-image:url("images/banner-events-bg.png");background-color:#fff;background-repeat:no-repeat;background-position:center bottom;padding-top:50px;position:relative;width:100%;z-index:2}
+.events-banner{background-image:url("images/banner-events-bg.png");background-color:#fff;background-repeat:no-repeat;background-position:center bottom;padding-top:80px;position:relative;width:100%;z-index:2}
 .events-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;position:relative}
 .events-banner-content{max-width:655px;width:50%}
 .events-banner-content h1{color:#84735e;font-size:3.15em;line-height:2.3rem;margin-bottom:70px}
@@ -1597,7 +1597,8 @@ footer .social-media a .fa{fill:#ede9e3}
 .content-default{background-color:#fff;font-size:18px}
 .content-default-title{font-size:1.25rem}
 .content-default-title h1{color:#84735e;font-size:50px}
-.content-default-banner{background-color:#ede9e3;padding-top:80px;position:relative;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+.content-default-desciption{color:#84735e;font-size:1.5rem;margin-top:35px;margin-bottom:50px;max-width:626px}
+.content-default-banner{background-color:#ede9e3;padding-top:130px;position:relative;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .content-default-banner .wrapper{position:relative;z-index:2}
 .content-default-banner:after{background-color:#d4b2a7;content:"";position:absolute;top:0;right:0;z-index:1;height:100%;width:100px}
 .content-default-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;padding-top:50px;padding-bottom:60px}

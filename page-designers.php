@@ -1,15 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package bellaworks
+ * Template Name: Designers
  */
 get_header();
 ?>
@@ -20,6 +11,9 @@ get_header();
         <div class="wrapper flexwrap">
           <div class="content-default-title">
             <h1><?php the_title(); ?></h1>
+            <div class="content-default-desciption">
+              <?php the_content(); ?>
+            </div>
           </div>
         </div><!-- wrapper -->
         <?php if (has_post_thumbnail( $post->ID ) ): ?>
@@ -33,10 +27,31 @@ get_header();
 	</main>
 	<section class="wrapper padding-tb-100">
 		<?php while ( have_posts() ) : the_post(); ?>
-		  
-      <div class="entry-content">
-        <?php the_content(); ?>
-      </div>
+
+      <?php
+        $resources_content = get_field('resources_content');
+        if( $resources_content ):
+      ?>
+        <div class="entry-content">
+          <?=$resources_content?>
+        </div>
+      <?php endif;
+
+        $resources = get_field("resources_document");
+        if( $resources ):
+      ?>
+        <ul class="resources clearfix">
+          <?php
+            foreach( $resources as $document ):
+              $title = $document["title"];
+              $pdf = $document["pdf"];
+          ?>
+              <li>
+                <a href="<?=$pdf['url']?>" target="_blank"><?=$title?></a>
+              </li>
+          <?php endforeach; ?>
+        </ul>
+      <?php endif; ?>
 
 		<?php endwhile; ?>
 
