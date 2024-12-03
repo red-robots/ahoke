@@ -52,7 +52,7 @@ get_header(); ?>
     if( $different_experience_title ){
   ?>
     <div class="brands diff-exp padding-tb-150">
-      <div class="wrapper-xl">
+      <div class="wrapper wrapper-xl">
         <h2 class="diff-exp-title"><?php echo $different_experience_title; ?></h2>
         <?php if( $experiences ) { ?>
           <div class="diff-exp-wrapper flexwrap">
