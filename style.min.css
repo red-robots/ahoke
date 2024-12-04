@@ -1611,6 +1611,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .content-default section .resources li{margin-bottom:15px}
 .content-default section .resources li a{text-decoration:none}
 .content-default section .resources li a:hover{color:#84735e}
+html{margin-top:46px}
 @media(min-width:600px){.banner-image{height:620px;max-width:400px}
 .banner-image:before{left:-25%;height:150px;width:150px}
 .banner-image-wrap{height:620px;width:440px}
@@ -1657,6 +1658,7 @@ h6{font-size:1.2rem}
 .team-member{margin-bottom:70px;width:30%}
 .contact-page .contact-showroom{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:70px}
 .contact-page .contact-details,.contact-page .contact-gmaps{width:50%}
+html{margin-top:32px}
 }@media(min-width:960px){#site-navigation ul.menu>li.current_page_item>a,#site-navigation ul.menu>li:hover>a{border-color:#91a796}
 .banner{background-image:url("images/banner-left.jpg");background-repeat:no-repeat;background-position:top right;background-size:61px 100%;height:1000px}
 .banner-content{width:50%}
@@ -1783,7 +1785,6 @@ footer .social-media{margin-top:30px;width:30%}
 .events-banner-image-wrap{margin-bottom:50px}
 .events-banner-image-wrap:after{height:320px;width:270px;right:-35px}
 .content-default-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
-html{margin-top:46px}
 }@media screen and (max-width:819px){.site-header{z-index:9999999}
 .mobile-navigation.active{background-color:rgba(0,0,0,.85)}
 }@media screen and (max-width:600px){footer .showroom{padding:0;width:100%}

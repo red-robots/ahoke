@@ -2789,8 +2789,8 @@ footer {
 }
 
 /*** Admin bar ***/
-@include max($tabwidth) {
-  html {
-    margin-top: 46px;
-  }
+html {
+  margin-top: 46px;
+
+  @include tab { margin-top: 32px; }
 }
