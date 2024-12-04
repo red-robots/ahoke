@@ -1365,7 +1365,7 @@ h6{font-size:.85rem}
 #site-navigation ul.menu{margin:0;padding:0;list-style:none;display:inline-block;float:right}
 #site-navigation ul.menu a{display:inline-block;color:#84735e;text-decoration:none}
 #site-navigation ul.menu a i{display:inline-block;width:0;font-size:0;color:transparent}
-#site-navigation ul.menu>li{float:left;position:relative;margin:0 30px}
+#site-navigation ul.menu>li{float:left;position:relative}
 #site-navigation ul.menu>li:last-child{margin-right:0}
 #site-navigation ul.menu>li>a{padding:5px 0;position:relative;z-index:1000;border-bottom:1.5px solid transparent}
 #site-navigation ul.menu ul{display:block;width:250px;background:rgba(132,115,94,.95);margin:0;padding:0;list-style:none;position:absolute;left:0;-webkit-transition:all ease .3s;transition:all ease .3s;opacity:0;z-index:-999}
@@ -1393,7 +1393,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .padding-tb-200{padding-top:200px;padding-bottom:200px}
 .homepage-content .title{color:#84735e;font-family:"PlayfairDisplay Regular";margin-bottom:30px}
 .homepage-content .description{color:#392c1d;font-size:20px;line-height:30px;margin-bottom:50px}
-.banner{background-color:#ede9e3;background-image:url("images/banner-left.jpg");background-repeat:no-repeat;background-position:top right;background-size:61px 100%;padding-top:150px;padding-bottom:100px;margin-bottom:5px;position:relative;width:100%;z-index:2}
+.banner{background-color:#ede9e3;padding-top:150px;padding-bottom:100px;margin-bottom:5px;position:relative;width:100%;z-index:2}
 .banner .wrapper{z-index:3}
 .banner .swiper{overflow:visible}
 .banner .swiper-slide{overflow:visible}
@@ -1408,8 +1408,8 @@ footer .social-media a .fa{fill:#ede9e3}
 .banner-image-wrap{overflow:visible;width:290px;height:450px;position:relative}
 .banner-image-wrap:after{background-image:url("images/banner-floral-bg.svg");background-repeat:no-repeat;content:"";position:absolute;top:-29px;left:-70%;z-index:1;height:100%;width:100%}
 .banner-content{padding-top:30px;width:100%}
-.banner-title{color:#84735e;font-size:3rem;max-width:626px}
-.banner-desciption{color:#84735e;font-size:1.2rem;font-style:italic;margin-top:35px;margin-bottom:50px;max-width:626px}
+.banner-title{color:#84735e;font-size:3rem}
+.banner-desciption{color:#84735e;font-size:1.2rem;font-style:italic;margin-top:35px;margin-bottom:50px}
 .content-1{background-color:#ede9e3;background-image:url("images/bg-brown.svg");background-repeat:no-repeat;background-position:top right;background-size:cover;position:relative;z-index:1}
 .content-1 .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
 .content-1 .wrapper{background:#fff url("images/bg-green-corner.svg") no-repeat top right;border-radius:80px 0 80px 0;padding:80px}
@@ -1442,15 +1442,15 @@ footer .social-media a .fa{fill:#ede9e3}
 .about-banner:before{background-image:url("images/banner-bottom.png");content:"";position:absolute;bottom:-24px;left:0;z-index:1;height:24px;width:100%}
 .about-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center}
 .about-banner-content{width:50%;padding-right:50px}
-.about-banner-title{color:#84735e;font-size:3.1rem;max-width:626px}
-.about-banner-desciption{color:#84735e;font-size:1.25rem;line-height:1.9rem;margin-top:35px;margin-bottom:40px;max-width:626px}
+.about-banner-title{color:#84735e;font-size:3.1rem}
+.about-banner-desciption{color:#84735e;font-size:1.25rem;line-height:1.9rem;margin-top:35px;margin-bottom:40px}
 .about-banner-image{height:680px;max-width:580px;width:100%;position:relative;z-index:2}
 .about-banner-image-wrap{margin-top:100px;overflow:visible;width:50%;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
 .about-banner-image:after{background-image:url("images/banner-about-frame.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;top:-15px;left:15px;z-index:2;height:100%;max-width:580px;width:100%}
 .about-banner-image:before{background-image:url("images/banner-green-ball.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;top:12%;right:-4%;z-index:2;height:150px;width:150px}
 .about-banner-image img{border-radius:400px 400px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
 .our-story{background-color:#91a796;color:#fff;overflow:hidden;position:relative;z-index:1}
-.our-story-img{position:relative;z-index:2;height:450px;width:100%;overflow:hidden}
+.our-story-img{position:relative;z-index:2;height:450px;padding-top:30px;width:100%;overflow:hidden}
 .our-story-img img{border-radius:400px 400px 0 0;height:100%;position:relative;-o-object-fit:cover;object-fit:cover;z-index:3;top:19px}
 .our-story-img:after{background-color:#d4b2a7;content:"";position:absolute;top:0;left:0;z-index:1;height:100%;max-width:580px;width:100%}
 .our-story .wrapper{position:relative;z-index:3}
@@ -1542,7 +1542,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .tag-tail:after{border-right:15px solid transparent;border-bottom:15px solid #d4b2a7}
 .tag-tail:before{border-right:15px solid transparent;border-top:15px solid #d4b2a7}
 .tag.tag-drop:before{content:"";width:0;height:0;border-right:12px solid transparent;border-top:16px solid #d4b2a7;display:block;position:absolute;bottom:-16px;left:0}
-.events-page{background-color:#fff}
+.events-page{background-color:#fff;overflow-x:hidden}
 .events-page .btn-green{height:38px;min-width:148px;max-width:148px;padding:7px 20px}
 .events-banner{background-image:url("images/banner-events-bg.png");background-color:#fff;background-repeat:no-repeat;background-position:center bottom;padding-top:80px;position:relative;width:100%;z-index:2}
 .events-banner .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;align-items:center;position:relative}
@@ -1643,7 +1643,7 @@ h6{font-size:1.2rem}
 .banner-image:before{left:-25%;height:199px;width:199px}
 .banner-image-wrap{height:650px;padding-right:0;width:400px}
 .banner-image-wrap:after{top:-85px;left:-30%}
-.banner-content{width:50%;padding-left:30px}
+.banner-content{width:48%;padding-left:30px}
 .banner-title{font-size:3.8rem}
 .banner-desciption{font-size:1.5rem}
 .vendors-anchor{gap:0;margin-bottom:70px;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
@@ -1658,8 +1658,10 @@ h6{font-size:1.2rem}
 .contact-page .contact-showroom{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:70px}
 .contact-page .contact-details,.contact-page .contact-gmaps{width:50%}
 }@media(min-width:960px){#site-navigation ul.menu>li.current_page_item>a,#site-navigation ul.menu>li:hover>a{border-color:#91a796}
+.banner{background-image:url("images/banner-left.jpg");background-repeat:no-repeat;background-position:top right;background-size:61px 100%;height:1000px}
+.banner-content{width:50%}
 .brands .brand-item{width:32%}
-.our-story-img{position:absolute;bottom:0;left:0;z-index:2;height:100%;max-width:705px;width:40%}
+.our-story-img{padding-top:0;position:absolute;bottom:0;left:0;z-index:2;height:100%;max-width:705px;width:40%}
 .our-story-content{margin-left:45%;width:55%}
 .diff-exp .exp-item{width:32%}
 .vendors-banner{padding-top:50px;padding-bottom:70px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
@@ -1673,7 +1675,11 @@ h6{font-size:1.2rem}
 .banner{height:1000px}
 .banner-image{height:883px}
 .banner-image-wrap{width:50%}
+.banner-title{max-width:626px}
+.banner-desciption{max-width:626px}
 .brands .brand-item{width:24%}
+.about-banner-title{max-width:626px}
+.about-banner-desciption{max-width:626px}
 .our-story:before{height:82px}
 .diff-exp .exp-item{width:24%}
 .vendors-anchor{margin-bottom:120px}
@@ -1760,13 +1766,12 @@ footer .social-media{margin-top:30px;width:30%}
 .content-2 .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .content-2 .content,.content-2 .feat-img{width:100%}
 .content-2 .feat-img{margin-bottom:15px}
-.about-banner{height:auto;padding-top:50px}
 .about-banner-title{font-size:3rem}
 .about-banner-desciption{font-size:1.2rem}
 .about-banner-content{padding-top:30px;padding-right:0;width:100%}
 .about-banner .wrapper{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .about-banner-image{height:100%;margin:0 auto;max-width:280px}
-.about-banner-image:before{background-size:100px;top:9%;right:-34%}
+.about-banner-image:before{height:100px;width:100px;top:9%;right:-18%}
 .about-banner-image-wrap{height:330px;width:290px}
 .vendors-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 .team-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
@@ -1778,6 +1783,7 @@ footer .social-media{margin-top:30px;width:30%}
 .events-banner-image-wrap{margin-bottom:50px}
 .events-banner-image-wrap:after{height:320px;width:270px;right:-35px}
 .content-default-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+html{margin-top:46px}
 }@media screen and (max-width:819px){.site-header{z-index:9999999}
 .mobile-navigation.active{background-color:rgba(0,0,0,.85)}
 }@media screen and (max-width:600px){footer .showroom{padding:0;width:100%}

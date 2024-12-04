@@ -210,7 +210,6 @@ h6 {
   ul.menu > li {
     float: left;
     position: relative;
-    margin: 0 30px;
     &:last-child {
       margin-right: 0;
     }
@@ -626,10 +625,7 @@ footer {
 /*** Home - Banner ***/
 .banner {
   background-color: $light_brown;
-  background-image: url('images/banner-left.jpg');
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-size: 61px 100%;
+  
   padding-top: 150px;
   padding-bottom: 100px;
   margin-bottom: 5px;
@@ -638,6 +634,13 @@ footer {
   z-index: 2;
 
   @include tab { padding-top: 100px; }
+  @include mid {
+    background-image: url('images/banner-left.jpg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 61px 100%;
+    height: 1000px;
+  }
   @include desk { height: 1000px; }
 
   .wrapper {
@@ -811,17 +814,19 @@ footer {
     width: 100%;
 
     @include tab {
-      width: 50%;
+      width: 48%;
       padding-left: 30px;
     }
+
+    @include mid { width: 50%; }
   }
 
   &-title {
     color: $brown;
     font-size: 3rem;
-    max-width: 626px;
 
     @include tab { font-size: 3.8rem; }
+    @include desk { max-width: 626px; }
   }
 
   &-desciption {
@@ -830,9 +835,9 @@ footer {
     font-style: italic;
     margin-top: 35px;
     margin-bottom: 50px;
-    max-width: 626px;
 
     @include tab { font-size: 1.5rem; }
+    @include desk { max-width: 626px; }
   }
 }
 
@@ -1079,7 +1084,7 @@ footer {
   }
 }
 
-/*** About - Our Story ***/
+/*** About ***/
 .about-banner {
   background-color: $light_brown;
   height: 710px;
@@ -1114,7 +1119,8 @@ footer {
   &-title {
     color: $brown;
     font-size: 3.1rem;
-    max-width: 626px;
+
+    @include desk { max-width: 626px; }
   }
 
   &-desciption {
@@ -1123,7 +1129,8 @@ footer {
     line-height: 1.9rem;
     margin-top: 35px;
     margin-bottom: 40px;
-    max-width: 626px;
+
+    @include desk { max-width: 626px; }
   }
 
   &-image {
@@ -1206,10 +1213,7 @@ footer {
     }
   }
 
-  @include max($tabwidth) {
-    height: auto;
-    padding-top: 50px;
-
+  @include max($tabwidth) {    
     &-title {
       font-size: 3rem;
     }
@@ -1234,9 +1238,10 @@ footer {
       max-width: 280px;
 
       &:before {
-        background-size: 100px;
+        height: 100px;
+        width: 100px;
         top: 9%;
-        right: -34%;
+        right: -18%;
       }
 
       &-wrap {
@@ -1261,10 +1266,12 @@ footer {
     position: relative;
     z-index: 2;
     height: 450px;
+    padding-top: 30px;
     width: 100%;
     overflow: hidden;
 
     @include mid {
+      padding-top: 0;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -2111,6 +2118,7 @@ footer {
 .events {
   &-page {
     background-color: $white;
+    overflow-x: hidden;
 
     .btn-green {
       height: 38px;      
@@ -2777,5 +2785,12 @@ footer {
         }
       }
     }
+  }
+}
+
+/*** Admin bar ***/
+@include max($tabwidth) {
+  html {
+    margin-top: 46px;
   }
 }
