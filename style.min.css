@@ -1412,7 +1412,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .banner-desciption{color:#84735e;font-size:1.2rem;font-style:italic;margin-top:35px;margin-bottom:50px}
 .content-1{background-color:#ede9e3;background-image:url("images/bg-brown.svg");background-repeat:no-repeat;background-position:top right;background-size:cover;position:relative;z-index:1}
 .content-1 .flexwrap{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}
-.content-1 .wrapper{background:#fff url("images/bg-green-corner.svg") no-repeat top right;border-radius:80px 0 80px 0;padding:80px}
+.content-1 .wrapper{background-color:#fff;background-image:url("images/bg-green-corner.svg");background-repeat:repeat-y;background-position:right top;border-radius:80px 0 80px 0;padding:80px;overflow:hidden}
 .content-1 .feat-img{background-color:#fff;border:3px solid #dbd0bd;padding:5px;border-radius:50%;height:auto;width:469px;overflow:hidden;aspect-ratio:1/1}
 .content-1 .feat-img img{border-radius:50%;height:100%}
 .content-1 .feat-img-wrap{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
@@ -1659,7 +1659,8 @@ h6{font-size:1.2rem}
 .contact-page .contact-showroom{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;margin-bottom:70px}
 .contact-page .contact-details,.contact-page .contact-gmaps{width:50%}
 html{margin-top:32px}
-}@media(min-width:960px){#site-navigation ul.menu>li.current_page_item>a,#site-navigation ul.menu>li:hover>a{border-color:#91a796}
+}@media(min-width:960px){#site-navigation ul.menu>li{margin:0 20px}
+#site-navigation ul.menu>li.current_page_item>a,#site-navigation ul.menu>li:hover>a{border-color:#91a796}
 .banner{background-image:url("images/banner-left.jpg");background-repeat:no-repeat;background-position:top right;background-size:61px 100%;height:1000px}
 .banner-content{width:50%}
 .brands .brand-item{width:32%}
@@ -1674,6 +1675,7 @@ html{margin-top:32px}
 .content-default section .resources li{float:left;width:50%}
 }@media(min-width:1200px){#site-logo{width:370px}
 .site-header .wrapper{padding:40px 50px}
+#site-navigation ul.menu>li{margin:0 30px}
 .banner{height:1000px}
 .banner-image{height:883px}
 .banner-image-wrap{width:50%}
@@ -1699,8 +1701,8 @@ html{margin-top:32px}
 .vendors-banner-image:before{top:13%}
 .content-default-banner-image{max-width:550px;height:400px}
 .content-default-banner-image:before{top:13%;left:-8%}
+.banner .wrapper,.content-1 .wrapper,.brands .wrapper.wrapper-xl,.content-2 .wrapper,.about-banner .wrapper{max-width:1200px}
 }@media screen and (max-width:1200px){.content-1{padding-left:30px;padding-right:30px}
-.content-1 .wrapper{background-size:34% 105%}
 .about-banner{height:auto;padding-top:50px}
 .about-banner-content{padding-top:50px}
 .about-banner-image{height:100%;margin:0 auto;max-width:380px}

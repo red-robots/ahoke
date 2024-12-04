@@ -210,6 +210,8 @@ h6 {
   ul.menu > li {
     float: left;
     position: relative;
+    @include mid { margin: 0 20px; }
+    @include desk { margin: 0 30px; }
     &:last-child {
       margin-right: 0;
     }
@@ -863,18 +865,18 @@ footer {
   }
 
   .wrapper {
-    background: $white url('images/bg-green-corner.svg') no-repeat top right;
+    background-color: $white;
+    background-image: url('images/bg-green-corner.svg');
+    background-repeat: repeat-y;
+    background-position: right top;
     border-radius: 80px 0 80px 0;
     padding: 80px;
+    overflow: hidden;
 
     @include max($midwidth) {
       background-image: none;
       @include flexbox-direction(column-reverse);
       padding: 30px;
-    }
-
-    @include max($deskwidth){
-      background-size: 34% 105%;
     }
   }
 
@@ -2793,4 +2795,15 @@ html {
   margin-top: 46px;
 
   @include tab { margin-top: 32px; }
+}
+
+/*** Margins in homepage ***/
+@include max($xxxl){
+  .banner .wrapper,
+  .content-1 .wrapper,
+  .brands .wrapper.wrapper-xl,
+  .content-2 .wrapper,
+  .about-banner .wrapper {
+    max-width: $deskwidth;
+  }
 }
