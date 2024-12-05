@@ -44,7 +44,7 @@ get_header();
     if( $browse_brand_title ){
   ?>
     <div class="brands padding-tb-150">
-      <div class="wrapper wrapper-xl">
+      <div class="wrapper">
         <h2 class="brands-title"><?php echo $browse_brand_title; ?></h2>
         <?php if( $brands ) { ?>
           <div class="brands-wrapper flexwrap">

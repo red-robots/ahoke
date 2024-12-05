@@ -133,10 +133,6 @@ h6 {
   padding-left: 15px;
   padding-right: 15px;
   position: relative;
-
-  &.wrapper-xl {
-    max-width: $xxxl;
-  }
 }
 .site-header {
   background: $white;
@@ -618,9 +614,9 @@ footer {
 
   .description {
     color: $dark_brown;
-    font-size: 20px;
     line-height: 30px;
     margin-bottom: 50px;
+    @include font-size-20();
   }
 }
 
@@ -641,9 +637,11 @@ footer {
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 61px 100%;
-    height: 1000px;
   }
-  @include desk { height: 1000px; }
+  @include desk {
+    // height: 1000px;
+    padding-bottom: 30px;
+  }
 
   .wrapper {
     z-index: 3;
@@ -705,24 +703,24 @@ footer {
     z-index: 2;
 
     @include xs {
-      height: 620px;
+      height: 550px;
       max-width: 400px;
     }
 
     @include tab {
       margin: 0;
-      height: 650px;
+      height: 550px;
       max-width: 550px;
     }
 
     @include desk {
-      height: 883px;
+      height: 750px; /* 883px */
     }
 
     &:after {
       background-image: url('images/banner-frame.svg');
       background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: 100%;
       content: '';
       position: absolute;
       top: -12px;
@@ -774,21 +772,22 @@ footer {
     &-wrap {
       overflow: visible;
       width: 290px;
-      height: 450px;
+      height: 385px;
       position: relative;
 
       @include xs {
-        height: 620px;
+        height: 550px;
         width: 440px;
       }
 
       @include tab {
-        height: 650px;
+        height: 550px;
         padding-right: 0;
         width: 400px;
       }
 
       @include desk {
+        height: 750px;
         width: 50%;
       }
 
@@ -827,8 +826,7 @@ footer {
     color: $brown;
     font-size: 3rem;
 
-    @include tab { font-size: 3.8rem; }
-    @include desk { max-width: 626px; }
+    @include desk { font-size: 3.8rem; max-width: 626px; }
   }
 
   &-desciption {
@@ -838,8 +836,7 @@ footer {
     margin-top: 35px;
     margin-bottom: 50px;
 
-    @include tab { font-size: 1.5rem; }
-    @include desk { max-width: 626px; }
+    @include desk { font-size: 1.5rem; max-width: 626px; }
   }
 }
 
@@ -991,7 +988,7 @@ footer {
     .brand-feat-img {
       border-radius: 150px 150px 0 0;
       max-width: 210px;
-      height: 268px;
+      height: 235px;
       overflow: hidden;
       position: relative;
       z-index: 1;
@@ -1036,7 +1033,7 @@ footer {
   }
 
   .cta-description {
-    font-size: 20px;
+    @include font-size-20();
     line-height: 30px;
     margin: 30px auto 40px;
     max-width: 968px;
@@ -1127,7 +1124,7 @@ footer {
 
   &-desciption {
     color: $brown;
-    font-size: 1.25rem;
+    @include font-size-20();
     line-height: 1.9rem;
     margin-top: 35px;
     margin-bottom: 40px;
@@ -1218,10 +1215,6 @@ footer {
   @include max($tabwidth) {    
     &-title {
       font-size: 3rem;
-    }
-  
-    &-desciption {
-      font-size: 1.2rem; 
     }
 
     &-content {
@@ -1324,7 +1317,7 @@ footer {
   }
 
   &-description {
-    font-size: 20px;
+    @include font-size-20();
     line-height: 30px;
   }
 
@@ -1363,15 +1356,17 @@ footer {
     color: $brown;
     margin-bottom: 90px;
   }
-  &-wrapper-xl {
+  .wrapper {
     @include flexbox-justify(space-between);
-    padding-left: 15px;
-    padding-right: 15px;
   }
 
   .exp-item {
     width: 100%;
-    padding: 0 30px;
+    padding: 0 15px;
+
+    @include max($xswidth){
+      margin-top: 30px;
+    }
 
     @include flexbox();
     @include flexbox-direction(column);
@@ -1403,15 +1398,17 @@ footer {
         object-fit: cover;
         height: 100%;
       }
+
+      @include desk { height: 150px; }
     }
     .exp-title {
       color: $brown;
-      font-size: 25px;
+      @include font-size-25();
       margin-top: 30px;
       margin-bottom: 20px;
     }
     .exp-content {
-      font-size: 20px;
+      @include font-size-20();
       line-height: 30px;
     }
   }
@@ -1479,7 +1476,7 @@ footer {
     }
   
     &-content {
-      font-size: 1.25rem; //20px
+      @include font-size-20();
 
       h1 {
         color: $brown;
@@ -1498,7 +1495,7 @@ footer {
 
       .events-date {
         font-family: $font-raleway-semibold;
-        font-size: 1.25rem; //20px
+        @include font-size-20();
       }
     }
 
@@ -1671,7 +1668,7 @@ footer {
     .by-category {
       color: $brown;
       font-family: $font-raleway-semibold;
-      font-size: 1.25rem; //20px
+      @include font-size-20();
       margin-bottom: 25px;
     }
 
@@ -1813,7 +1810,7 @@ footer {
   &-title {
     color: $brown;
     font-family: $font-playfair-regular;
-    font-size: 1.25rem; //20px
+    @include font-size-20();
     font-weight: 600;
     margin-bottom: 5px;
   }
@@ -1821,7 +1818,7 @@ footer {
   &-cat {
     color: $green;
     font-family: $font-raleway-semibold;
-    font-size: 1.125rem; //18px
+    @include font-size-18();
     text-transform: lowercase;
   }
 }
@@ -1874,7 +1871,7 @@ footer {
 
   &-name {
     color: $brown;
-    font-size: 1.9em; //30px
+    @include font-size-30();
     margin: 25px 0 15px;
   }
 
@@ -1934,7 +1931,7 @@ footer {
   
     &-desciption {
       color: $brown;
-      font-size: 1.25rem;
+      @include font-size-20();
       line-height: 1.9rem;
       margin-top: 35px;
       margin-bottom: 40px;
@@ -2074,7 +2071,7 @@ footer {
 
 // The title of the tag
 .tag-title {
-  font-size: 1.125rem; //18px
+  @include font-size-18();
   font-weight: 500;
   line-height: 15px;
   color: $white;
@@ -2178,7 +2175,7 @@ footer {
 
       .events-date {
         font-family: $font-raleway-semibold;
-        font-size: 1.25rem; //20px
+        @include font-size-20();
       }
     }
 
@@ -2403,7 +2400,7 @@ footer {
     }
     &-hours {
       color: $brown;
-      font-size: 1.25rem;
+      @include font-size-20();
       line-height: 1.9rem;
       margin-top: 35px;
       margin-bottom: 40px;
@@ -2473,7 +2470,7 @@ footer {
       &-header {
         border-bottom: 3px solid $border_cream;
         color: $brown;
-        font-size: 1.9rem;
+        @include font-size-30();
         font-family: $font-playfair-regular;
         margin-bottom: 30px;
         padding-bottom: 15px;
@@ -2504,7 +2501,7 @@ footer {
       &-phone {
         color: $brown;
         font-family: $font-raleway-semibold;
-        font-size: 1.25rem; //20px
+        @include font-size-20();
         margin-bottom: 20px;
       }
     }
@@ -2552,7 +2549,7 @@ footer {
         textarea {
           border: 0;
           border-radius: 0;
-          font-size: 1.25rem; //20px
+          @include font-size-20();
           height: 50px;
         }
         textarea {
@@ -2606,10 +2603,10 @@ footer {
 /*** Defaults ***/
 .content-default {
   background-color: $white;
-  font-size: 18px;
+  @include font-size-18();
 
   &-title {
-    font-size: 1.25rem; //20px
+    @include font-size-20();
 
     h1 {
       color: $brown;
@@ -2791,19 +2788,23 @@ footer {
 }
 
 /*** Admin bar ***/
-html {
-  margin-top: 46px;
-
-  @include tab { margin-top: 32px; }
+@include max($tabwidth) {
+  html { margin-top: 32px; }
+}
+@include max($xswidth) {
+  html { margin-top: 46px; }
 }
 
 /*** Margins in homepage ***/
 @include max($xxxl){
   .banner .wrapper,
   .content-1 .wrapper,
-  .brands .wrapper.wrapper-xl,
+  .brands .wrapper,
   .content-2 .wrapper,
-  .about-banner .wrapper {
+  .about-banner .wrapper,
+  .vendors-wrapper,
+  .events-banner .wrapper,
+  .events-wrapper {
     max-width: $deskwidth;
   }
 }

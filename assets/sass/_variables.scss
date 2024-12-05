@@ -67,6 +67,34 @@ $nav_width: 485px;
 	font-size: $sizeValue * 1rem;
 }
 
+@mixin font-size-18() {
+	font-size: 16px;
+	@include desk(){
+		font-size: 1.125rem; //18px
+	}
+}
+
+@mixin font-size-20() {
+	font-size: 1.125rem; //18px
+	@include desk(){
+		font-size: 1.25rem; //20px
+	}
+}
+
+@mixin font-size-25() {
+	font-size: 1.4rem; //22px
+	@include desk(){
+		font-size: 1.57rem; //25px
+	}
+}
+
+@mixin font-size-30() {
+	font-size: 1.6rem; //25px
+	@include desk(){
+		font-size: 1.9rem; //30px
+	}
+}
+
 // Center block
 @mixin center-block {
 	display: block;
