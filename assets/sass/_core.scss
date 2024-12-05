@@ -988,10 +988,12 @@ footer {
     .brand-feat-img {
       border-radius: 150px 150px 0 0;
       max-width: 210px;
-      height: 235px;
+      height: 210px;
       overflow: hidden;
       position: relative;
       z-index: 1;
+
+      @include xxxl { height: 235px; }
 
       img {
         object-fit: cover;

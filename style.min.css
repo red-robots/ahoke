@@ -1423,7 +1423,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .brands .brands-wrapper{-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .brands .brand-item{background-color:#fff;display:inline-block;margin-bottom:40px;padding:0 30px 30px;position:relative;text-decoration:none;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .brands .brand-item::before{background-color:#ede9e3;content:"";height:30px;width:100%;position:absolute;top:0;left:0;z-index:0}
-.brands .brand-item .brand-feat-img{border-radius:150px 150px 0 0;max-width:210px;height:235px;overflow:hidden;position:relative;z-index:1}
+.brands .brand-item .brand-feat-img{border-radius:150px 150px 0 0;max-width:210px;height:210px;overflow:hidden;position:relative;z-index:1}
 .brands .brand-item .brand-feat-img img{-o-object-fit:cover;object-fit:cover;height:100%}
 .brands .brand-item .brand-title{color:#84735e;font-size:25px;margin-top:30px}
 .brands .brand-item:hover{background-color:#91a796}
@@ -1713,7 +1713,8 @@ h6{font-size:1.2rem}
 }@media(min-width:1364px){.brands .brand-item{width:19.5%}
 .diff-exp .exp-item{margin-bottom:0;width:19.5%}
 .contact-page .contact-social{right:50px;width:220px}
-}@media(min-width:1640px){.contact-page .contact-social{right:140px}
+}@media(min-width:1640px){.brands .brand-item .brand-feat-img{height:235px}
+.contact-page .contact-social{right:140px}
 }@media screen and (max-width:1640px){.vendors-banner-image{max-width:550px;height:400px}
 .vendors-banner-image:before{top:13%}
 .content-default-banner-image{max-width:550px;height:400px}
