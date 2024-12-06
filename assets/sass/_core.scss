@@ -623,16 +623,14 @@ footer {
 /*** Home - Banner ***/
 .banner {
   background-color: $light_brown;
-  
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 100px;
   margin-bottom: 5px;
   position: relative;
   width: 100%;
   z-index: 2;
 
-  @include tab { padding-top: 100px; }
-  @include mid {
+  @include tab {
     background-image: url('images/banner-left.jpg');
     background-repeat: no-repeat;
     background-position: top right;
@@ -658,13 +656,24 @@ footer {
   &:after {
     background-image: url('images/banner-left-flower.png');
     background-repeat: no-repeat;
+    background-size: 100%;
     content: '';
     position: absolute;
     bottom: -20px;
     right: 0;
     z-index: 1;
-    height: 610px;
-    width: 270px;
+    height: 350px;
+    width: 155px;
+
+    @include tab {
+      height: 450px;
+      width: 200px;
+    }
+
+    @include mid {
+      height: 610px;
+      width: 245px; /* 270px */
+    }
   }
 
   &:before {
@@ -703,18 +712,17 @@ footer {
     z-index: 2;
 
     @include xs {
-      height: 550px;
+      height: 475px;
       max-width: 400px;
     }
 
     @include tab {
       margin: 0;
-      height: 550px;
       max-width: 550px;
     }
 
     @include desk {
-      height: 750px; /* 883px */
+      height: 650px; /* 750px - 883px */
     }
 
     &:after {
@@ -749,7 +757,6 @@ footer {
       width: 100px;
 
       @include xs {
-        left: -25%;
         height: 150px;
         width: 150px;
       }
@@ -772,39 +779,44 @@ footer {
     &-wrap {
       overflow: visible;
       width: 290px;
-      height: 385px;
+      height: 330px; /* 385px */
       position: relative;
 
       @include xs {
-        height: 550px;
+        height: 475px;
         width: 440px;
       }
 
       @include tab {
-        height: 550px;
         padding-right: 0;
         width: 400px;
       }
 
       @include desk {
-        height: 750px;
+        height: 650px;
         width: 50%;
       }
 
       &:after {
         background-image: url('images/banner-floral-bg.svg');
+        background-size: 100%;
         background-repeat: no-repeat;
         content: '';
         position: absolute;
-        top: -29px;
-        left: -70%;
+        top: -40px;
+        left: -25%;
         z-index: 1;
         height: 100%;
         width: 100%;
 
+        @include max($xswidth) {
+          height: 350px;
+          width: 345px;
+        }
+
         @include tab {
-          top: -85px;
-          left: -30%;
+          top: -115px;
+          left: -25%;
         }
       }
     }
@@ -817,6 +829,7 @@ footer {
     @include tab {
       width: 48%;
       padding-left: 30px;
+      padding-right: 30px;
     }
 
     @include mid { width: 50%; }
@@ -826,17 +839,18 @@ footer {
     color: $brown;
     font-size: 3rem;
 
-    @include desk { font-size: 3.8rem; max-width: 626px; }
+    @include desk { font-size: 3.8rem; max-width: 600px; }
   }
 
   &-desciption {
     color: $brown;
-    font-size: 1.2rem; 
     font-style: italic;
+    line-height: 30px;
     margin-top: 35px;
     margin-bottom: 50px;
+    @include font-size-20;
 
-    @include desk { font-size: 1.5rem; max-width: 626px; }
+    @include desk { max-width: 500px; }
   }
 }
 
@@ -1142,12 +1156,13 @@ footer {
     z-index: 2;
 
     &-wrap {
-      margin-top: 100px;
       overflow: visible;
       width: 50%;
       position: relative;
       @include flexbox();
       @include flexbox-justify(flex-end);
+
+      @include mid { margin-top: 100px; }
     }
 
     &:after {
@@ -1188,7 +1203,7 @@ footer {
 
   @include max($deskwidth) {
     height: auto;
-    padding-top: 50px;
+    padding-top: 100px;
 
     &-content {
       padding-top: 50px;
@@ -1410,7 +1425,7 @@ footer {
       margin-bottom: 20px;
     }
     .exp-content {
-      @include font-size-20();
+      @include font-size-18();
       line-height: 30px;
     }
   }
@@ -1848,7 +1863,7 @@ footer {
     background-image: url('images/bg-team.svg');
     background-size: cover;
     overflow: hidden;
-    padding-top: 70px;
+    padding-top: 120px;
     padding-bottom: 30px;
 
     @include tab { padding-top: 100px; }
@@ -1891,9 +1906,7 @@ footer {
 
   &-banner {
     margin-bottom: 80px;
-    padding-top: 70px;
 
-    @include tab { padding-top: 0; }
     @include desk { margin-bottom: 120px; }
 
     .flexwrap {
@@ -1921,14 +1934,15 @@ footer {
     }
   
     &-content {
-      padding-top: 50px;
+      padding-top: 30px;
       width: 100%;
       
       @include tab {
         width: 50%;
-        padding-top: 0;
         padding-right: 50px;
       }
+
+      @include desk { padding-top: 0; }
     }
   
     &-desciption {
