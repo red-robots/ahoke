@@ -44,7 +44,9 @@ get_header(); ?>
                   <div class="events-date"><?php echo $event_date; ?> &nbsp;|&nbsp; <?php echo $start_date .' - '. $end_date; ?> &nbsp;|&nbsp; <?php echo $event_location; ?></div>
                 <?php } ?>
                 <div class="events-content"><?php the_content(); ?></div>
-                <a href="<?php echo $register_link; ?>" class="button btn-green">Register</a>
+                <?php if ($register_link) { ?>
+                  <a href="<?php echo $register_link; ?>" class="button btn-green">Register</a>
+                <?php } ?>
               </div>
             </div>
             <div class="events-banner-image-wrap">
