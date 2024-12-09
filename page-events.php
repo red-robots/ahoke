@@ -105,7 +105,9 @@ get_header(); ?>
                 <?php } ?>
                 <div class="events-content"><?php the_content(); ?></div>
               </div>
-              <a href="<?php echo $register_link; ?>" class="button btn-green">Register</a>
+              <?php if ($register_link) { ?>
+                <a href="<?php echo $register_link; ?>" class="button btn-green">Register</a>
+              <?php } ?>
             </div>
           </div>
         <?php endwhile;  ?>
