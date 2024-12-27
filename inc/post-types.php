@@ -93,6 +93,15 @@ function build_taxonomies() {
 
   $post_types = array(
     array(
+        'post_type' => array('team'),
+        'menu_name' => 'Team Category',
+        'plural'    => 'Team Categories',
+        'single'    => 'Team Category',
+        'taxonomy'  => 'team-category',
+        'query_var' => false,
+        'show_admin_column'=>1
+    ),
+    array(
       'post_type' => array('vendor'),
       'menu_name' => 'Vendor Category',
       'plural'    => 'Vendor Categories',
@@ -142,7 +151,6 @@ function build_taxonomies() {
 
     }
   }
-
 }
 
 
@@ -153,26 +161,6 @@ function set_custom_cpt_columns($columns) {
     global $wp_query;
     $query = isset($wp_query->query) ? $wp_query->query : '';
     $post_type = ( isset($query['post_type']) ) ? $query['post_type'] : '';
-
-    if($post_type=='dining') {
-      unset($columns['date']);
-      $columns['title'] = __( 'Name', 'bellaworks' );
-      $columns['start_date'] = __( 'Start Date', 'bellaworks' );
-      $columns['date'] = __( 'Published', 'bellaworks' );
-    }
-    
-    if($post_type=='tribe_events') {
-        unset($columns['taxonomy-event-location']);
-        unset($columns['expirationdate']);
-        unset($columns['date']);
-        $columns['title'] = __( 'Name', 'bellaworks' );
-        // $columns['show_on_homepage'] = __( 'Show on<br>Homepage', 'bellaworks' );
-        // $columns['featimage'] = __( 'Image', 'bellaworks' );
-        // $columns['taxonomy-event-location'] = __( 'Location', 'bellaworks' );
-        $columns['start_date'] = __( 'Start Date', 'bellaworks' );
-        // $columns['expirationdate'] = __( 'Expires', 'bellaworks' );
-        $columns['bandname'] = __( 'Band', 'bellaworks' );
-    }
 
     if($post_type=='post') {
         unset($columns['tags']);

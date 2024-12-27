@@ -1871,6 +1871,10 @@ footer {
     .wrapper {
       max-width: 1080px;
     }
+
+    h2 {
+      text-align: center;
+    }
   }
 
   &-photo {
@@ -1915,21 +1919,15 @@ footer {
       @include flexbox-align-items(center);
       position: relative;
 
-      @include max($tabwidth) {
-        @include flexbox-direction(column-reverse);
-      }
-
       &:after {
         background-color: $pink;
         content: '';
         position: absolute;
-        bottom: 0;
+        bottom: -30px;
         left: 0;
         z-index: 1;
         height: 10px;
         width: 100%;
-
-        @include tab { width: 50%; }
       }
     }
   
@@ -1937,12 +1935,14 @@ footer {
       padding-top: 30px;
       width: 100%;
       
-      @include tab {
-        width: 50%;
-        padding-right: 50px;
-      }
+      @include tab { width: 30%; }
 
-      @include desk { padding-top: 0; }
+      @include mid { width: 37%; }
+
+      @include desk {
+        padding-top: 0;
+        width: 38%;
+      }
     }
   
     &-desciption {
@@ -1964,10 +1964,9 @@ footer {
   
       &-wrap {
         overflow: visible;
-        width: 50%;
         position: relative;
         @include flexbox();
-        @include flexbox-justify(flex-end);
+        @include flexbox-justify(flex-start);
       }
   
       &:after {
@@ -2035,6 +2034,10 @@ footer {
 
       &-tab {
         @include tab { display: table; }
+      }
+
+      &-show {
+        display: table;
       }
 
       &:last-child {
