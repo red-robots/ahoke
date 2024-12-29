@@ -1670,7 +1670,7 @@ h6{font-size:1.2rem}
 .team-banner-content{width:37%}
 .content-default-banner{padding-top:50px;padding-bottom:70px;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}
 .content-default-banner .wrapper{width:50%;max-width:585px}
-.content-default section .resources li{float:left;width:50%}
+.content-default section .resources{float:left;width:50%}
 }@media(min-width:1200px){#site-logo{width:370px}
 .site-header .wrapper{padding:40px 50px}
 #site-navigation ul.menu>li{margin:0 30px}

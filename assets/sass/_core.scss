@@ -2785,6 +2785,11 @@ footer {
 
     .resources {
       margin-top: 30px;
+
+      @include mid {
+        float: left;
+        width: 50%;
+      }
       
       li {
         margin-bottom: 15px;
@@ -2795,11 +2800,6 @@ footer {
           &:hover {
             color: $brown;
           }
-        }
-
-        @include mid {
-          float: left;
-          width: 50%;
         }
       }
     }

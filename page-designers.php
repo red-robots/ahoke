@@ -38,19 +38,26 @@ get_header();
       <?php endif;
 
         $resources = get_field("resources_document");
+
         if( $resources ):
+          $cols = ceil(count($resources) / 2);
+          $arrays = array_chunk($resources, $cols);
       ?>
-        <ul class="resources clearfix">
-          <?php
-            foreach( $resources as $document ):
-              $title = $document["title"];
-              $pdf = $document["pdf"];
-          ?>
-              <li>
-                <a href="<?=$pdf['url']?>" target="_blank"><?=$title?></a>
-              </li>
+        <div class="clearfix">
+          <?php foreach($arrays as $column): ?>
+            <ul class="resources clearfix">
+              <?php
+                foreach( $column as $document ):
+                  $title = $document["title"];
+                  $pdf = $document["pdf"];
+              ?>
+                <li>
+                  <a href="<?=$pdf['url']?>" target="_blank"><?=$title?></a>
+                </li>
+              <?php endforeach; ?>
+            </ul>
           <?php endforeach; ?>
-        </ul>
+        </div>
       <?php endif; ?>
 
 		<?php endwhile; ?>
