@@ -37,6 +37,7 @@ get_header(); ?>
               $position = get_field('team_position');
               $email = get_field('team_email');
               $bio = get_field('bio');
+              $button_text = get_field('popup_button_text');
           ?>
             <div class="team-banner-content">
               <div class="team-banner-image-wrap">
@@ -47,7 +48,7 @@ get_header(); ?>
               <h2 class="team-name"><?php the_title(); ?></h1>
               <div class="team-position"><?php echo $position; ?></div>
               <a href="mailto:<?php echo antispambot($email,1) ?>" class="team-email"><?php echo antispambot($email) ?></a>
-              <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>">Bio</button></div>
+              <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>"><?php echo $button_text; ?></button></div>
             </div>
             <!-- Modal -->
             <div id="team-<?=$team_id?>" class="team-modal">
@@ -103,6 +104,7 @@ get_header(); ?>
             $position = get_field('team_position');
             $email = get_field('team_email');
             $bio = get_field('bio');
+            $button_text = get_field('popup_button_text');
           ?>
           <div class="team-member">
             <div class="team-photo">
@@ -117,7 +119,7 @@ get_header(); ?>
               <div class="team-position"><?php echo $position; ?></div>
             <?php } ?>
             <div><a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a></div>
-            <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>">Bio</button></div>
+            <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>"><?php echo $button_text; ?></button></div>
           </div>
           <!-- Modal -->
           <div id="team-<?=$team_id?>" class="team-modal">
@@ -183,6 +185,7 @@ get_header(); ?>
             $position = get_field('team_position');
             $email = get_field('team_email');
             $bio = get_field('bio');
+            $button_text = get_field('popup_button_text');
           ?>
           <div class="team-member">
             <div class="team-photo">
@@ -197,7 +200,7 @@ get_header(); ?>
               <div class="team-position"><?php echo $position; ?></div>
             <?php } ?>
             <div><a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a></div>
-            <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>">Bio</button></div>
+            <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>"><?php echo $button_text; ?></button></div>
           </div>
           <!-- Modal -->
           <div id="team-<?=$team_id?>" class="team-modal">
