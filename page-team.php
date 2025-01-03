@@ -33,21 +33,36 @@ get_header(); ?>
             while ( $teams->have_posts() ) : $teams->the_post();
               $team_id = get_the_ID();
               $placeholder = THEMEURI . '/images/image-not-available.jpg';
-              $photo = get_the_post_thumbnail( get_the_ID(), 'large' );
+              $photo = get_the_post_thumbnail( $team_id, 'large' );
               $position = get_field('team_position');
               $email = get_field('team_email');
+              $bio = get_field('bio');
           ?>
             <div class="team-banner-content">
               <div class="team-banner-image-wrap">
                 <div class="team-banner-image">
-                  <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
+                  <?php echo $photo; ?>
                 </div>
               </div>
-              <h1 class="team-name"><?php the_title(); ?></h1>
+              <h2 class="team-name"><?php the_title(); ?></h1>
               <div class="team-position"><?php echo $position; ?></div>
               <a href="mailto:<?php echo antispambot($email,1) ?>" class="team-email"><?php echo antispambot($email) ?></a>
-              <section class="team-banner-desciption"><?php the_content(); ?></section>
+              <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>">Bio</button></div>
             </div>
+            <!-- Modal -->
+            <div id="team-<?=$team_id?>" class="team-modal">
+              <div class="flexwrap">
+                <div class="team-content">
+                  <h2 class="team-name"><?php the_title(); ?></h1>
+                  <div class="team-position"><?php echo $position; ?></div>
+                  <div class="team-bio"><?php echo $bio; ?></div>
+                </div>
+                <div class="team-image">
+                  <?php echo $photo; ?>
+                </div>
+              </div>
+            </div>
+            <!-- end Modal -->
           <?php endwhile;  ?>
         </div>
       </div><!-- team-banner -->
@@ -84,9 +99,10 @@ get_header(); ?>
           while ( $teams->have_posts() ) : $teams->the_post();
             $team_id = get_the_ID();
             $placeholder = THEMEURI . '/images/image-not-available.jpg';
-            $photo = get_the_post_thumbnail( get_the_ID(), 'large' );
+            $photo = get_the_post_thumbnail( $team_id, 'large' );
             $position = get_field('team_position');
             $email = get_field('team_email');
+            $bio = get_field('bio');
           ?>
           <div class="team-member">
             <div class="team-photo">
@@ -100,10 +116,23 @@ get_header(); ?>
             <?php if ($position) { ?>
               <div class="team-position"><?php echo $position; ?></div>
             <?php } ?>
-            <div>
-            <a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a>
+            <div><a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a></div>
+            <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>">Bio</button></div>
+          </div>
+          <!-- Modal -->
+          <div id="team-<?=$team_id?>" class="team-modal">
+            <div class="flexwrap">
+              <div class="team-content">
+                <h2 class="team-name"><?php the_title(); ?></h1>
+                <div class="team-position"><?php echo $position; ?></div>
+                <div class="team-bio"><?php echo $bio; ?></div>
+              </div>
+              <div class="team-image">
+                <?php echo $photo; ?>
+              </div>
             </div>
           </div>
+          <!-- end Modal -->
           <?php
             if( $count_xs % 2 == 0 ){
               echo "<div class='divider divider-xs'></div>";
@@ -150,9 +179,10 @@ get_header(); ?>
           while ( $teams->have_posts() ) : $teams->the_post();
             $team_id = get_the_ID();
             $placeholder = THEMEURI . '/images/image-not-available.jpg';
-            $photo = get_the_post_thumbnail( get_the_ID(), 'large' );
+            $photo = get_the_post_thumbnail( $team_id, 'large' );
             $position = get_field('team_position');
             $email = get_field('team_email');
+            $bio = get_field('bio');
           ?>
           <div class="team-member">
             <div class="team-photo">
@@ -166,10 +196,23 @@ get_header(); ?>
             <?php if ($position) { ?>
               <div class="team-position"><?php echo $position; ?></div>
             <?php } ?>
-            <div>
-            <a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a>
+            <div><a href="mailto:<?php echo antispambot($email,1); ?>" class="team-email"><?php echo $email; ?></a></div>
+            <div><button class="button btn-green btn-short" data-fancybox data-src="#team-<?=$team_id?>">Bio</button></div>
+          </div>
+          <!-- Modal -->
+          <div id="team-<?=$team_id?>" class="team-modal">
+            <div class="flexwrap">
+              <div class="team-content">
+                <h2 class="team-name"><?php the_title(); ?></h1>
+                <div class="team-position"><?php echo $position; ?></div>
+                <div class="team-bio"><?php echo $bio; ?></div>
+              </div>
+              <div class="team-image">
+                <?php echo $photo; ?>
+              </div>
             </div>
           </div>
+          <!-- end Modal -->
           <?php
             if( $count_xs % 2 == 0 ){
               echo "<div class='divider divider-xs'></div>";
@@ -186,5 +229,6 @@ get_header(); ?>
     </section>
   <?php } ?>
 </div>
+
 <?php
 get_footer();
