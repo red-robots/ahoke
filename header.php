@@ -65,6 +65,8 @@ var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){
     </div>
 	</header><!-- #masthead -->
 
+  <?php get_template_part('parts/popup'); ?>
+
   <?php get_template_part('parts/banner'); ?>
 
 	<div id="content" class="site-content">

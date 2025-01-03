@@ -103,6 +103,8 @@ jQuery(document).ready(function ($) {
   *
   */
   // Get the navigation bar element
+
+
   var navbar = document.getElementById("masthead"); // Initialize the previous scroll position
 
   var prevScrollPosition = window.pageYOffset;
@@ -132,8 +134,8 @@ jQuery(document).ready(function ($) {
 
     prevScrollPosition = currentScrollPosition;
   });
-
   /*** Mobile Navigation ***/
+
   $(document).on('click', '#mobile-menu-toggle', function (e) {
     e.preventDefault();
     $('body').toggleClass('mobile-menu-open');
@@ -183,30 +185,22 @@ jQuery(document).ready(function ($) {
       filter: filterValue
     });
   });
-
-  /*** Modal for Teams ***/
-  Fancybox.bind('[data-fancybox]', {
-    // Custom options for all galleries
-  }); 
-  /*** end Modal for Teams ***/
-  
-  // $('[data-fancybox]').fancybox({
-  //   touch: true,
-  //   hash: false,
-  //   youtube: {
-  //     controls: 0,
-  //     showinfo: 0,
-  //     rel: 0
-  //   },
-  //   vimeo: {
-  //     color: 'ffffff'
-  //   }
-  // });
+  $('[data-fancybox]').fancybox({
+    touch: true,
+    hash: false,
+    youtube: {
+      controls: 0,
+      showinfo: 0,
+      rel: 0
+    },
+    vimeo: {
+      color: 'ffffff'
+    }
+  });
   $('.zoom-image').fancybox({
     buttons: ['fullScreen', 'close'],
     hash: false
   });
-
   var windowHeight = $(window).scrollTop();
 
   if (windowHeight > 200) {
@@ -222,8 +216,8 @@ jQuery(document).ready(function ($) {
       $("body").removeClass('scrolled'); //$('body').removeClass('subnav-clicked');
     }
   });
-
   /*** Banner Sldier ***/
+
   var swiper = new Swiper('.swiper', {
     autoplay: {
       delay: 15000
@@ -382,7 +376,28 @@ jQuery(document).ready(function ($) {
         slider.stop();
       }
     });
-  }
+  } // When was this added?
+  // $(document).on('click', function (e) {
+  // 	var tag = $(this);
+  // 	var exceptions = ['todayToggle','todayLink','todayTxt','today-options', 'arrow'];
+  // 	var elementId = e.target.id;
+  //   //console.log(e);
+  // 	var is_open = false;
+  // 	if( elementId=='today-options' ) {
+  // 		$(".topinfo .today").addClass("open");
+  // 	} else {
+  // 		if($.inArray(elementId, exceptions) != -1) {
+  // 			if( $(".topinfo .today").hasClass("open") ) {
+  // 				$(".topinfo .today").removeClass("open");
+  // 			} else {
+  // 				$(".topinfo .today").addClass("open");
+  // 			}
+  //  		} else {
+  //  			$(".topinfo .today").removeClass("open");
+  //  		}
+  // 	}
+  // });
+
 
   $('a[href*="#"]:not([href="#"])').click(function () {
     var headHeight = $("#masthead").height();
@@ -400,8 +415,8 @@ jQuery(document).ready(function ($) {
       }
     }
   });
-
   /* Load More */
+
   $(document).on("click", "#loadMoreBtn", function (event) {
     event.preventDefault();
     var loadButton = $(this);
@@ -962,60 +977,69 @@ jQuery(document).ready(function ($) {
   }); // Mindy
   // Show icon to scroll up
 
-  $(window).scroll(function () {
-    var top = $('.scroll-top');
-    /* Check the location of each desired element */
-
-    var initial_position = $('.vendors-anchor').offset().top + $(window).height() + 300;
-    var hide_icon = initial_position - 200;
-    var bottom_of_window = $(window).scrollTop() + $(window).height();
-    /* If the object is completely visible in the window, fade it in */
-
-    if (bottom_of_window > initial_position) {
-      top.stop(true, true).animate({
-        'opacity': '1'
-      }, 100);
-    }
-    /* Hide Icon */
-
-
-    if (bottom_of_window < hide_icon) {
-      top.stop(true, true).animate({
-        'opacity': '0'
-      }, 100);
-    }
-  });
-
-  if ($('.vendors-anchor').length && window.location.hash.length) {
-    var target = window.location.hash.replace('#', '');
-    $('input[data-target="' + target + '"]').prop('checked', true);
-    apply_filter(target);
-  } // Vendors Category
-
-
-  $('.category-filter').on('change', function () {
-    var target = $(this).data('target');
-    apply_filter(target);
-  });
-
-  function apply_filter(target) {
-    if (target == "all") {
-      $('.vendors-item').show();
-      $('.vendors-lists').show();
-    } else {
-      $('.vendors-item').hide();
-      $('.vendors-item.' + target).show();
-      $('.vendors-item.' + target).parent().parent().show();
-    }
-
-    $('.vendors-lists').each(function () {
-      if ($(this).find('.vendors-item:visible').length == 0) {
-        $(this).hide();
+  if ($('.vendors-page').length) {
+    var apply_filter = function apply_filter(target) {
+      if (target == "all") {
+        $('.vendors-item').show();
+        $('.vendors-lists').show();
       } else {
-        $(this).show();
+        $('.vendors-item').hide();
+        $('.vendors-item.' + target).show();
+        $('.vendors-item.' + target).parent().parent().show();
+      }
+
+      $('.vendors-lists').each(function () {
+        if ($(this).find('.vendors-item:visible').length == 0) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+      });
+    };
+
+    $(window).scroll(function () {
+      var top = $('.scroll-top');
+      /* Check the location of each desired element */
+
+      var initial_position = $('.vendors-anchor').offset().top + $(window).height() + 300;
+      var hide_icon = initial_position - 200;
+      var bottom_of_window = $(window).scrollTop() + $(window).height();
+      /* If the object is completely visible in the window, fade it in */
+
+      if (bottom_of_window > initial_position) {
+        top.stop(true, true).animate({
+          'opacity': '1'
+        }, 100);
+      }
+      /* Hide Icon */
+
+
+      if (bottom_of_window < hide_icon) {
+        top.stop(true, true).animate({
+          'opacity': '0'
+        }, 100);
       }
     });
-  }
+
+    if ($('.vendors-anchor').length && window.location.hash.length) {
+      var target = window.location.hash.replace('#', '');
+      $('input[data-target="' + target + '"]').prop('checked', true);
+      apply_filter(target);
+    } // Vendors Category
+
+
+    $('.category-filter').on('change', function () {
+      var target = $(this).data('target');
+      apply_filter(target);
+    });
+  } // Launch fancyBox on first element
+
+
+  window.onload = function () {
+    setTimeout(function () {
+      $(".btn-popup").trigger('click');
+    }, 2000);
+  };
 }); // END #####################################    END
 "use strict";
 
