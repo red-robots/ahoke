@@ -1084,7 +1084,7 @@ var getGridSize = function() {
 	window.onload = function(){
 		setTimeout(function(){
 			$(".btn-popup").trigger('click')
-		}, 2000);
+		}, 500);
 	 };
 
 });// END #####################################    END
