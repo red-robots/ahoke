@@ -2316,6 +2316,10 @@ footer {
         font-size: 3.15em; //50px
         line-height: 2.3rem;
         margin-bottom: 70px;
+
+        @include max($tabwidth) {
+          display: none;
+        }
       }
       
       @include max($tabwidth) {
@@ -2338,7 +2342,7 @@ footer {
 
     &-image {
       height: 570px;
-      max-width: 525px;
+      // max-width: 525px;
       width: 100%;
       position: relative;
       z-index: 2;
@@ -2347,8 +2351,22 @@ footer {
         overflow: visible;
         width: 50%;
         position: relative;
+        padding-left: 50px;
         @include flexbox();
         @include flexbox-justify(flex-end);
+        @include flex-direction(column);
+
+        h3 {
+          color: $brown;
+          font-size: 3.15em; //50px
+          line-height: 2.3rem;
+          margin-bottom: 70px;
+          display: none;
+
+          @include max($tabwidth) {
+            display: block;
+          }
+        }
 
         // &:after {
         //   background-image: url('images/events-floral.svg');
@@ -2402,7 +2420,7 @@ footer {
       @include max($deskwidth) {     
         height: 100%;
         margin: 0 auto;
-        max-width: 340px;
+        // max-width: 340px;
 
         &:before {
           height: 100px;
@@ -2419,9 +2437,11 @@ footer {
       }
 
       @include max($tabwidth) {    
-        max-width: 280px;
+        // max-width: 280px;
 
         &-wrap {
+          padding-left: 0;
+          width: 100%;
           margin-bottom: 50px;
 
           &:after {
@@ -2433,7 +2453,7 @@ footer {
       }
 
       @include max($xswidth) {
-        width: 340px;
+        // width: 340px;
 
         &:before {
           height: 70px;
@@ -2442,7 +2462,7 @@ footer {
 
         &-wrap {
           width: 100%;
-          max-width: 340px;
+          // max-width: 340px;
 
           &:after {
             height: 320px;

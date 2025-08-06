@@ -1566,8 +1566,9 @@ footer .social-media a .fa{fill:#ede9e3}
 .events-banner-content h1{color:#84735e;font-size:3.15em;line-height:2.3rem;margin-bottom:70px}
 .events-banner-details{background-color:#fff;border-radius:0 0 20px 0;-webkit-box-shadow:0 3px 6px rgba(0,0,0,.1);box-shadow:0 3px 6px rgba(0,0,0,.1);padding:50px;position:relative}
 .events-banner-details .events-date{font-family:"Raleway Semibold";font-size:1.125rem}
-.events-banner-image{height:570px;max-width:525px;width:100%;position:relative;z-index:2}
-.events-banner-image-wrap{overflow:visible;width:50%;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
+.events-banner-image{height:570px;width:100%;position:relative;z-index:2}
+.events-banner-image-wrap{overflow:visible;width:50%;position:relative;padding-left:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;box-direction:normal;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column}
+.events-banner-image-wrap h3{color:#84735e;font-size:3.15em;line-height:2.3rem;margin-bottom:70px;display:none}
 .events-banner-image img{position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
 .events-photo{height:200px;width:100%}
 .events-photo img{border-radius:10px 10px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
@@ -1760,7 +1761,7 @@ h6{font-size:1.2rem}
 .vendors-banner-image{max-width:400px;height:315px}
 .vendors-banner-image:before{height:100px;width:100px}
 .team-banner-image{height:100%;margin:0 auto;max-width:300px}
-.events-banner-image{height:100%;margin:0 auto;max-width:340px}
+.events-banner-image{height:100%;margin:0 auto}
 .events-banner-image:before{height:100px;width:100px}
 .events-banner-image-wrap:after{height:370px;width:300px;right:0}
 .content-default-banner-image{max-width:400px;height:315px}
@@ -1827,9 +1828,10 @@ footer .social-media{margin-top:30px;width:30%}
 .team-banner-image{max-width:280px}
 .team-banner-image:after{top:-12px;left:12px}
 .events-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
+.events-banner-content h1{display:none}
 .events-banner-content{width:100%}
-.events-banner-image{max-width:280px}
-.events-banner-image-wrap{margin-bottom:50px}
+.events-banner-image-wrap h3{display:block}
+.events-banner-image-wrap{padding-left:0;width:100%;margin-bottom:50px}
 .events-banner-image-wrap:after{height:320px;width:270px;right:-35px}
 .content-default-banner .flexwrap{-webkit-box-orient:vertical;-webkit-box-direction:reverse;-ms-flex-direction:column-reverse;flex-direction:column-reverse}
 html{margin-top:32px}
@@ -1841,9 +1843,8 @@ footer .social-media a{margin-left:0;margin-right:15px}
 .banner-image-wrap:after{height:350px;width:345px}
 .diff-exp .exp-item{margin-top:30px}
 .team-banner-image{height:100%;margin:0 auto;max-width:300px}
-.events-banner-image{width:340px}
 .events-banner-image:before{height:70px;width:70px}
-.events-banner-image-wrap{width:100%;max-width:340px}
+.events-banner-image-wrap{width:100%}
 .events-banner-image-wrap:after{height:320px;width:270px;right:-70px}
 html{margin-top:46px}
 }@media screen and (max-width:480px){#site-navigation{max-width:100%}

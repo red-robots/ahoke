@@ -50,6 +50,7 @@ get_header(); ?>
               </div>
             </div>
             <div class="events-banner-image-wrap">
+              <h3><?php echo $page_title; ?></h3>
               <div class="events-banner-image">
                 <?php echo get_the_post_thumbnail( get_the_ID(), 'large' ); ?>
               </div>
