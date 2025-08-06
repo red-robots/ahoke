@@ -2350,49 +2350,49 @@ footer {
         @include flexbox();
         @include flexbox-justify(flex-end);
 
-        &:after {
-          background-image: url('images/events-floral.svg');
-          background-repeat: no-repeat;
-          background-size: 100%;
-          content: '';
-          position: absolute;
-          top: -50px;
-          right: -90px;
-          z-index: 1;
-          height: 470px;
-          width: 335px;
-        }
+        // &:after {
+        //   background-image: url('images/events-floral.svg');
+        //   background-repeat: no-repeat;
+        //   background-size: 100%;
+        //   content: '';
+        //   position: absolute;
+        //   top: -50px;
+        //   right: -90px;
+        //   z-index: 1;
+        //   height: 470px;
+        //   width: 335px;
+        // }
       }
 
-      &:before {
-        background-image: url('images/banner-green-ball.svg');
-        background-repeat: no-repeat;
-        background-size: 100%;
-        content: '';
-        position: absolute;
-        top: 30%;
-        left: -15%;
-        z-index: 2;
-        height: 144px;
-        width: 144px;
-      }
+      // &:before {
+      //   background-image: url('images/banner-green-ball.svg');
+      //   background-repeat: no-repeat;
+      //   background-size: 100%;
+      //   content: '';
+      //   position: absolute;
+      //   top: 30%;
+      //   left: -15%;
+      //   z-index: 2;
+      //   height: 144px;
+      //   width: 144px;
+      // }
   
-      &:after {
-        background-image: url('images/banner-events-frame.svg');
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: 15px;
-        z-index: 2;
-        height: 100%;
-        max-width: 580px;
-        width: 100%;
-      }
+      // &:after {
+      //   background-image: url('images/banner-events-frame.svg');
+      //   background-repeat: no-repeat;
+      //   background-size: 100% 100%;
+      //   content: '';
+      //   position: absolute;
+      //   top: -15px;
+      //   left: 15px;
+      //   z-index: 2;
+      //   height: 100%;
+      //   max-width: 580px;
+      //   width: 100%;
+      // }
   
       img {
-        border-radius: 300px 300px 0 0;
+        // border-radius: 300px 300px 0 0;
         position: relative;
         z-index: 1;
         object-fit: cover;

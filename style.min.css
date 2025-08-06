@@ -1568,10 +1568,7 @@ footer .social-media a .fa{fill:#ede9e3}
 .events-banner-details .events-date{font-family:"Raleway Semibold";font-size:1.125rem}
 .events-banner-image{height:570px;max-width:525px;width:100%;position:relative;z-index:2}
 .events-banner-image-wrap{overflow:visible;width:50%;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}
-.events-banner-image-wrap:after{background-image:url("images/events-floral.svg");background-repeat:no-repeat;background-size:100%;content:"";position:absolute;top:-50px;right:-90px;z-index:1;height:470px;width:335px}
-.events-banner-image:before{background-image:url("images/banner-green-ball.svg");background-repeat:no-repeat;background-size:100%;content:"";position:absolute;top:30%;left:-15%;z-index:2;height:144px;width:144px}
-.events-banner-image:after{background-image:url("images/banner-events-frame.svg");background-repeat:no-repeat;background-size:100% 100%;content:"";position:absolute;top:-15px;left:15px;z-index:2;height:100%;max-width:580px;width:100%}
-.events-banner-image img{border-radius:300px 300px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
+.events-banner-image img{position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
 .events-photo{height:200px;width:100%}
 .events-photo img{border-radius:10px 10px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
 .events-title{color:#84735e;font-size:1.9em;line-height:2.3rem;margin-bottom:30px}
