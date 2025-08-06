@@ -77,7 +77,7 @@ get_header(); ?>
         <?php
           while ( $teams->have_posts() ) : $teams->the_post();
             $placeholder = THEMEURI . '/images/image-not-available.jpg';
-            $photo = get_the_post_thumbnail( get_the_ID(), 'medium' );
+            $photo = get_the_post_thumbnail( get_the_ID(), 'full' );
 
             $event_date = get_field("event_date");
             $start_date = get_field("event_start_time");
