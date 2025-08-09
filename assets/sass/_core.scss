@@ -2343,7 +2343,7 @@ footer {
     &-image {
       // height: 570px;
       // max-width: 525px;
-      aspect-ratio: 4/5;
+      aspect-ratio: 5/4;
       height: auto;
       width: 100%;
       position: relative;
@@ -2418,7 +2418,7 @@ footer {
         object-fit: cover;
         // height: 100%;
         height: auto;
-        aspect-ratio: 4 / 5;
+        aspect-ratio: 5/4;
       }
 
       @include max($deskwidth) {     

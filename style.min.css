@@ -1566,10 +1566,10 @@ footer .social-media a .fa{fill:#ede9e3}
 .events-banner-content h1{color:#84735e;font-size:3.15em;line-height:2.3rem;margin-bottom:70px}
 .events-banner-details{background-color:#fff;border-radius:0 0 20px 0;-webkit-box-shadow:0 3px 6px rgba(0,0,0,.1);box-shadow:0 3px 6px rgba(0,0,0,.1);padding:50px;position:relative}
 .events-banner-details .events-date{font-family:"Raleway Semibold";font-size:1.125rem}
-.events-banner-image{aspect-ratio:4/5;height:auto;width:100%;position:relative;z-index:2}
+.events-banner-image{aspect-ratio:5/4;height:auto;width:100%;position:relative;z-index:2}
 .events-banner-image-wrap{overflow:visible;width:50%;position:relative;padding-left:50px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-orient:vertical;box-orient:vertical;-webkit-box-direction:normal;box-direction:normal;-moz-flex-direction:column;flex-direction:column;-ms-flex-direction:column}
 .events-banner-image-wrap h3{color:#84735e;font-size:3.15em;line-height:2.3rem;margin-bottom:30px;display:none}
-.events-banner-image img{position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:auto;aspect-ratio:4/5}
+.events-banner-image img{position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:auto;aspect-ratio:5/4}
 .events-photo{height:200px;width:100%}
 .events-photo img{border-radius:10px 10px 0 0;position:relative;z-index:1;-o-object-fit:cover;object-fit:cover;height:100%}
 .events-title{color:#84735e;font-size:1.9em;line-height:2.3rem;margin-bottom:30px}
